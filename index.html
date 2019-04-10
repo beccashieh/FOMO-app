@@ -15,11 +15,13 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>FOMO NOMO</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid text-center">
       <div class="container">
         <h1 class="display-4">FOMO...no mo</h1>
         <p class="lead">Possible quote to go here</p>
@@ -28,25 +30,32 @@
     <nav class="navbar navbar-dark bg-dark">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="#">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Movies/TV</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
+          <a class="nav-link" href="#">Music</a>
         </li>
-      </ul>
     </nav>
+
+    <div class="row instructions">
+      <div class="col-4"></div>
+      <div class="media col-8">
+        <img class="d-flex align-self-center mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0 font-weight-bold">How it works!</h5>
+          <p>See what was or is trending for a particular date.</p>
+          <p>Choose your topic to the left and enter the date you want to search.</p>
+          <p>Each page will show you the trending topics for the date you entered.</p>
+          <h5>Happy searching!</h5>
+        </div>
+      </div>
+    </div>
 
     <!--Javascript links-->
     <script
@@ -59,5 +68,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    
   </body>
 </html>
