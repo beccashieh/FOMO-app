@@ -20,5 +20,33 @@
 
     <title>FOMO NOMO- Movies/TV</title>
   </head>
-  <body></body>
+  <body>
+    <div class='container-fluid'>
+      <div class="row">
+        <div class="col-12" id="header-row">
+          <h1>Movies</h1>
+          <p>Please Select a date range</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" id="search-bar">
+          <div class="form-group">
+            <label id='new-date'>Date</label>
+            <input type="text" class="form-control" id="from-date" placeholder="####-##-##">
+          </div>
+          <div class="form-group">
+            <label id='new-date'>Date</label>
+            <input type="text" class="form-control" id="to-date" placeholder="####-##-##">
+          </div>
+          <button id='submit-button' type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+
+        <div class="col-12" id="movie-row"></div>
+
+      </div>
+    </div>
+    <script src="./assets/javascript/main.js"></script>
+  </body>
   </html>
