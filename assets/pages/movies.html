@@ -15,8 +15,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
 
     <title>FOMO NOMO- Movies/TV</title>
   </head>
@@ -29,13 +31,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12" id="search-bar">
+        <div class="col-5" id="search-bar">
           <div class="form-group">
-            <label id='new-date'>Date</label>
+            <label id='new-date'>To Date</label>
             <input type="text" class="form-control" id="from-date" placeholder="####-##-##">
           </div>
           <div class="form-group">
-            <label id='new-date'>Date</label>
+            <label id='new-date'>From Date</label>
             <input type="text" class="form-control" id="to-date" placeholder="####-##-##">
           </div>
           <button id='submit-button' type="submit" class="btn btn-success">Submit</button>
@@ -47,6 +49,6 @@
 
       </div>
     </div>
-    <script src="./assets/javascript/main.js"></script>
+    <script src="../js/app.js"></script>
   </body>
   </html>
