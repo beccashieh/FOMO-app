@@ -1,15 +1,5 @@
-.nav-item {
-    color: white;
+.brand-logo {
+    padding: 20px;
 }
 
-.jumbotron {
-    margin-bottom: 0px;
-}
 
-.media-body {
-    justify-content: center;
-    align-self: center;
-    width: 50%;
-    padding: 10px;
-    margin-top: 10%;
-}

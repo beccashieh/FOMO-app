@@ -8,61 +8,55 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 
     <title>FOMO NOMO- Products</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid text-center">
-      <div class="container">
-        <h1 class="display-4">FOMO...no mo</h1>
-        <p class="lead">Possible quote to go here</p>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/assets/pages/news.html">News</a></li>
+          <li><a href="/assets/pages/music.html">Music</a></li>
+          <li><a href="/assets/pages/movies.html">Movies/TV</a></li>
+          <li><a href="/assets/pages/products.html">Products</a></li>
+        </ul>
       </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="/index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/assets/pages/news.html">News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/movies.html">Movies/TV</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/music.html">Music</a>
-        </li>
     </nav>
 
     <div class="search row">
       <div class="col-2"></div>
       <div class="col-8">
-
         <h5>Choose your category below</h5>
         <form>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Category</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ex: Electronics">
-            </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Category</label>
+            <input
+              type="text"
+              class="form-control"
+              id="category-input"
+              placeholder="Ex: Electronics"
+            />
+          </div>
         </form>
+        <button class="btn btn-info" type="submit" id="submit">Submit</button>
       </div>
       <div class="col-2"></div>
     </div>
 
     <div class="results row">
-      <div class="col-10" id="results-content">
-
-      </div>
+      <div class="col-10" id="results-content"></div>
     </div>
-  
-    
-  <script src="../js/product.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/product.js"></script>
   </body>
-  </html>
+</html>
