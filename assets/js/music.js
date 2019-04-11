@@ -18,14 +18,14 @@ $(document).on("click", "#top-artists", function() {
     method: "GET"
   }).then(function(response) {
     // Storing an array of artist names
-    // console.log(response);
+    console.log(response);
     var artistArray = response.artists.artist;
     // console.log(artistArray);
     // Looping over every result item
     for (var i = 0; i < artistArray.length; i++) {
       // Storing artist names
       var artistName = artistArray[i].name;
-      var artistImage = artistArray[i].image[2];
+      var artistImage = artistArray[i].image[2]["#text"];
       console.log(artistName);
       console.log(artistImage);
     }
@@ -53,7 +53,7 @@ $("#top-songs").click(function() {
     for (var i = 0; i < tracksArray.length; i++) {
       // Storing artist names
       var trackName = tracksArray[i].name;
-      var trackImage = tracksArray[i].image[2];
+      var trackImage = tracksArray[i].image[2]["#text"];
       console.log(trackName);
       console.log(trackImage);
     }
