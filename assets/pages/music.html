@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>FOMO NOMO - Music</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -15,10 +16,26 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <title>FOMO NOMO- Music</title>
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
-  <body></body>
-  </html>
+
+  <body>
+    <button type="button" class="btn btn-primary btn-lg" id="top-artists">
+      Top 10 Artists
+    </button>
+    <div class="row">
+      <!-- Output goes here -->
+      <div id="top-10-aritists"></div>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg" id="top-songs">
+      Top 10 Songs
+    </button>
+    <div class="row">
+      <!-- Output goes here -->
+      <div id="top-10-songs"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>
