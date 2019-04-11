@@ -2,8 +2,8 @@
 
 //Create global variables
 var queryURL = '';
-var fromDate = "";
-var toDate = "";
+var startDate = "";
+var endDate = "";
 
 
 //When a user clicks submit
@@ -12,12 +12,12 @@ $('#submit-button').on('click', function () {
     event.preventDefault();
     $("#movie-row").empty();
     //Capture date in the input box
-    var fromDate = $("#from-date").val();
-    var toDate = $("#to-date").val();
+    var startDate = $("#startDate").val();
+    var endDate = $("#endDate").val();
     //If there is something in the search bar, 
     //insert the date as a parameter in the query URL and call the ajax request
-    if (toDate !== "" && fromDate !== "") {
-        queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=c472f72e061f4083caae81e6e937276a&primary_release_date.gte=" + fromDate + "&primary_release_date.lte=" + toDate + "&original_language=en&sort_by=popularity.desc";
+    if (startDate !== "" && endDate !== "") {
+        queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=c472f72e061f4083caae81e6e937276a&primary_release_date.gte=" + startDate + "&primary_release_date.lte=" + endDate + "&language=en&sort_by=popularity.desc";
         getMovies();
     }
 });
