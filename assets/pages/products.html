@@ -8,15 +8,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 
     <title>FOMO NOMO- Products</title>
   </head>
@@ -30,21 +25,44 @@
     <nav class="navbar navbar-dark bg-dark">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link active" href="/index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="assets/pages/news.html">News</a>
+          <a class="nav-link active" href="/news.html">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="assets/pages/products.html">Products</a>
+          <a class="nav-link" href="/products.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="assets/pages/movies.html">Movies/TV</a>
+          <a class="nav-link" href="/movies.html">Movies/TV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="assets/pages/music.html">Music</a>
+          <a class="nav-link" href="../pages/music.html">Music</a>
         </li>
     </nav>
 
+    <div class="search row">
+      <div class="col-2"></div>
+      <div class="col-8">
+
+        <h5>Choose your category below</h5>
+        <form>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Category</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ex: Electronics">
+            </div>
+        </form>
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <div class="results row">
+      <div class="col-10" id="results-content">
+
+      </div>
+    </div>
+  
+    
+  <script src="../js/product.js"></script>
   </body>
   </html>
