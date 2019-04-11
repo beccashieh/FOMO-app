@@ -1,7 +1,13 @@
+//Global variables
+var apiKey = "10f8d0af1f97ab76b64e7be5940dcbd0";
+var queryUrl =
+  "https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" +
+  apiKey +
+  "&limit=10&format=json";
 //API call for Top 10 Artists
 $(document).on("click", "#top-artists", function() {
   // Storing our giphy API URL
-  var apiKey = "10f8d0af1f97ab76b64e7be5940dcbd0";
+
   var queryUrl =
     "https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" +
     apiKey +
