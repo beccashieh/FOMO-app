@@ -1,0 +1,13 @@
+/* Change cursor to pointer */
+.artist-item {
+  cursor: pointer;
+}
+
+.song-item {
+  cursor: pointer;
+}
+
+#button-row {
+  margin: auto;
+  width: 50%;
+}
