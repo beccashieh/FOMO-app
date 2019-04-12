@@ -10,6 +10,8 @@ var topSongQueryUrl =
   "&limit=10&format=json";
 //API call for Top 10 Artists
 $(document).on("click", "#top-artists-button", function() {
+  //Clear output section
+  $("#output").empty();
   // Perfoming an AJAX GET request to our queryURL
   $.ajax({
     url: topArtistQueryUrl,
@@ -22,14 +24,17 @@ $(document).on("click", "#top-artists-button", function() {
     // Looping over every result item
     for (var i = 0; i < artistArray.length; i++) {
       var newCard = $("<div>");
-      newCard.attr("class", "card artist-item");
+      newCard.attr("class", "card medium artist-item");
       // Storing artist names
       var artistName = artistArray[i].name;
-      var artistImage = artistArray[i].image[2]["#text"];
+      var artistImage = artistArray[i].image[3]["#text"];
       var artistUrl = artistArray[i].url;
       var artistRank = i + 1;
       var cardPicHolder = $("<div>");
-      cardPicHolder.attr("class", "card-image hoverable artist-card");
+      cardPicHolder.attr(
+        "class",
+        "responsive-img card-image hoverable artist-card"
+      );
       var cardPic = $("<img>");
       cardPic.attr("src", artistImage);
       cardPic.attr("class", "card-image");
@@ -38,7 +43,7 @@ $(document).on("click", "#top-artists-button", function() {
       var cardBody = $("<div>");
       cardBody.attr("class", "");
       cardBody.append("<h5> # " + artistRank + "</h5>");
-      cardBody.append("<h4>" + artistName + "</h4>");
+      cardBody.append("<h5>" + artistName + "</h5>");
       cardBody.appendTo(newCard);
       var cardLinks = $("<div>");
       cardLinks.attr("class", "card-action");
@@ -52,6 +57,8 @@ $(document).on("click", "#top-artists-button", function() {
 
 //API call for Top 10 Songs
 $("#top-songs-button").click(function() {
+  // Clear output section
+  $("#output").empty();
   // Perfoming an AJAX GET request to our queryURL
   $.ajax({
     url: topSongQueryUrl,
@@ -61,14 +68,17 @@ $("#top-songs-button").click(function() {
     var tracksArray = response.tracks.track;
     for (var i = 0; i < tracksArray.length; i++) {
       var newCard = $("<div>");
-      newCard.attr("class", "card song-item");
+      newCard.attr("class", "card medium song-item");
       // Storing artist names
       var trackName = tracksArray[i].name;
-      var trackImage = tracksArray[i].image[2]["#text"];
+      var trackImage = tracksArray[i].image[3]["#text"];
       var tracktUrl = tracksArray[i].url;
       var trackRank = i + 1;
       var cardPicHolder = $("<div>");
-      cardPicHolder.attr("class", "card-image hoverable artist-card");
+      cardPicHolder.attr(
+        "class",
+        "responsive-img card-image hoverable artist-card"
+      );
       var cardPic = $("<img>");
       cardPic.attr("src", trackImage);
       cardPic.attr("class", "card-image");
@@ -77,7 +87,7 @@ $("#top-songs-button").click(function() {
       var cardBody = $("<div>");
       cardBody.attr("class", "");
       cardBody.append("<h5> # " + trackRank + "</h5>");
-      cardBody.append("<h4>" + trackName + "</h4>");
+      cardBody.append("<h5>" + trackName + "</h5>");
       cardBody.appendTo(newCard);
       var cardLinks = $("<div>");
       cardLinks.attr("class", "card-action");
