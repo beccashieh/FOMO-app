@@ -21,18 +21,44 @@ $(document).on("click", "#top-artists-button", function() {
     // console.log(artistArray);
     // Looping over every result item
     for (var i = 0; i < artistArray.length; i++) {
+      var newCard = $("<div>");
+      newCard.attr("class", "card news-item");
       // Storing artist names
-      var artistDiv = $("<div>");
       var artistName = artistArray[i].name;
       var artistImage = artistArray[i].image[2]["#text"];
-      var p = $("<p>").text(artistName);
-      var artistImg = $("<img>");
-      artistImg.attr("src", artistImage);
-      artistImg.addClass("img col s3");
-      artistDiv.append(p);
-      artistDiv.append(artistImg);
-      $("#topartists").prepend(artistDiv);
+      var cardPicHolder = $("<div>");
+      cardPicHolder.attr("class", "card-image");
+      var cardPic = $("<img>");
+      cardPic.attr("src", artistImage);
+      cardPic.attr("class", "card-image");
+      cardPic.appendTo(cardPicHolder);
+      cardPicHolder.appendTo(newCard);
+
+      var cardBody = $("<div>");
+      cardBody.attr("class", "card-content");
+      cardBody.append("<h5>" + artistName + "</h5>");
+      cardBody.append("<p>" + artistName + "</p>");
+      cardBody.appendTo(newCard);
+
+      var cardLinks = $("<div>");
+      cardLinks.attr("class", "");
+      var artistLink = $("<a>");
+      artistLink.attr("src", "#");
+      artistLink.text("Find out more!");
+      artistLink.appendTo(newCard);
+
+      var cardColumn = $("<div>");
+      cardColumn.attr("class", "col s3");
+      newCard.appendTo(cardColumn);
+      cardColumn.appendTo($("#topartists"));
     }
+    // var p = $("<p>").text(artistName);
+    // var artistImg = $("<img>");
+    // artistImg.attr("src", artistImage);
+    // artistImg.addClass("img col s3");
+    // artistDiv.append(p);
+    // artistDiv.append(artistImg);
+    // $("#topartists").prepend(artistDiv);
   });
 });
 
