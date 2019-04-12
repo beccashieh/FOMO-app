@@ -9,7 +9,7 @@ var topSongQueryUrl =
   apiKey +
   "&limit=10&format=json";
 //API call for Top 10 Artists
-$(document).on("click", "#top-artists", function() {
+$(document).on("click", "#top-artists-button", function() {
   // Perfoming an AJAX GET request to our queryURL
   $.ajax({
     url: topArtistQueryUrl,
@@ -25,19 +25,19 @@ $(document).on("click", "#top-artists", function() {
       var artistDiv = $("<div>");
       var artistName = artistArray[i].name;
       var artistImage = artistArray[i].image[2]["#text"];
-      var p = $("<p class='flow-text textInfo'>").text + artistName;
+      var p = $("<p>").text(artistName);
       var artistImg = $("<img>");
       artistImg.attr("src", artistImage);
+      artistImg.addClass("img col s3");
       artistDiv.append(p);
       artistDiv.append(artistImg);
-      $("#top-10-artists").prepend(artistImage);
-      $("#top-10-artists").prepend(artistDiv);
+      $("#topartists").prepend(artistDiv);
     }
   });
 });
 
 //API call for Top 10 Songs
-$("#top-songs").click(function() {
+$("#top-songs-button").click(function() {
   // Perfoming an AJAX GET request to our queryURL
   $.ajax({
     url: topSongQueryUrl,
@@ -50,10 +50,16 @@ $("#top-songs").click(function() {
     // Looping over every result item
     for (var i = 0; i < tracksArray.length; i++) {
       // Storing artist names
+      var trackDiv = $("<div>");
       var trackName = tracksArray[i].name;
       var trackImage = tracksArray[i].image[2]["#text"];
-      console.log(trackName);
-      console.log(trackImage);
+      var p = $("<p>").text(trackName);
+      var trackImg = $("<img>");
+      trackImg.attr("src", trackImage);
+      trackImg.addClass("img col s3");
+      trackDiv.append(p);
+      trackDiv.append(trackImg);
+      $("#top-songs").prepend(trackDiv);
     }
   });
 });
