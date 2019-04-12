@@ -2,4 +2,18 @@
     padding: 20px;
 }
 
+/*---------------Meme page styling-------------------*/
+#results-content {
+    border: 1px solid lightgray;
+    align-content: center;
+}
+
+#foreverTitle,
+#weeklyTitle,
+#monthlyTitle {
+    display: hidden;
+}
+
+
+
 
