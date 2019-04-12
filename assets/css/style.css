@@ -13,3 +13,9 @@
     padding: 10px;
     margin-top: 10%;
 }
+
+/*----------------------------Movie/TV Page-----------------------------*/
+.card {
+    margin: 2%;
+    display: inline-flex;
+}
