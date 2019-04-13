@@ -1,19 +1,27 @@
 .brand-logo {
-    padding: 20px;
+  padding: 20px;
 }
 
 /*---------------Meme page styling-------------------*/
-#results-content {
-    border: 1px solid lightgray;
-    align-content: center;
+.results {
+  border: 1px solid lightgray;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: #FFFFFF;
+  margin: auto 10%;
+  padding: 20px;
 }
 
-#foreverTitle,
-#weeklyTitle,
-#monthlyTitle {
-    display: hidden;
+.meme-item {
+  margin: 10px;
 }
 
+.card-image {
+  padding: 10px;
+  background-color: lightgray;
+}
 
-
+.card-links {
+  padding: 20px;
+}
 
