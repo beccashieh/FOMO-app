@@ -2,38 +2,9 @@
   padding: 20px;
 }
 
-/*---------------Meme page styling-------------------*/
-.results {
-  border: 1px solid lightgray;
-  flex-wrap: wrap;
-  align-content: space-around;
-  background-color: #FFFFFF;
-  margin: auto 10%;
-  padding: 20px;
-}
-
-.meme-item {
-  margin: 10px;
-}
-
-.card-image {
-  padding: 10px;
-  background-color: lightgray;
-}
-
-.card-links {
-  padding: 20px;
-}
-
-.media-body {
-    justify-content: center;
-    align-self: center;
-    width: 50%;
-    padding: 10px;
-    margin-top: 10%;
-}
-
 /*----------------------------Movie/TV Page-----------------------------*/
 .card{
     height: 500px;
 }
+
+

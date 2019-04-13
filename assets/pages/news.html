@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-    <link rel="stylesheet" href="/assets/css/style.css" />
+<html>
 
-    <title>FOMO NOMO- News</title>
-  </head>
-  <body>
-      <nav>
-          <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">FOMO...no mo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="/assets/pages/news.html">News</a></li>
-              <li><a href="/assets/pages/music.html">Music</a></li>
-              <li><a href="/assets/pages/movies.html">Movies/TV</a></li>
-              <li><a href="/assets/pages/products.html">Products</a></li>
-            </ul>
-          </div>
-        </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
 
-  </body>
+<body>
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">FOMO...no mo</h1>
+      <p class="lead">Possible quote to go here</p>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="assets/pages/news.html">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="assets/pages/products.html">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="assets/pages/movies.html">Movies/TV</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="assets/pages/music.html">Music</a>
+      </li>
+  </nav>
+ 
+  <div class='container'>
+    <div class='row'>
+      <div class='col s12'>
+        <h3>Don't let the hottest stories pass you by!</h3>
+        <br>
+        <h5>Search for the trending stories in the categories you're interested in!</h5>
+        <label for="news-query-input"></label>
+        <input type="search" class="form-control" id="news-query-input" placeholder="botany">
+        <br>
+        <button id='news-search'>Search!</button>
+      </div>
+    </div>
+    <div class='row' id='news-item-box'>
+
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src='../news/app.js'></script>
+</body>
+
 </html>
