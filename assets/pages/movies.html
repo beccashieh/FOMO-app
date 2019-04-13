@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/movies.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
@@ -99,12 +100,18 @@
          <a href="#!" id="custom-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
        </div>
      </div>
+
+     
     <div class="row text-center">
       <div class="col-12" id="header-row">
         <h1>Top Movies and TV Shows</h1>
+</div>
+        
+        <div class="row text-center" id="enter-date-form">
+
         <p>Please Select a movie release date range or click submit to see which movies are trending now</p>
-      </div>
-    </div>
+      
+  
     <div class='row'>
       <div class="input-field col s6">
         <input placeholder='Start Date' type='date' id='startDate' class="validate" />
@@ -118,6 +125,7 @@
       </div>
     </div>
     <button id='submit-button' type="submit" class="btn btn-success">Submit</button>
+    </div>
     </div>
 
     <div class="row" id="movie-row">
