@@ -7,15 +7,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/music.css" />
 
     <title>FOMO NOMO- Music</title>
   </head>
@@ -32,22 +30,14 @@
         </ul>
       </div>
     </nav>
-
-    <!-- Buttons go here -->
-
-    <h5 class="center-align">Select the Top Artists or Top Songs</h5>
-    <div class="row" id="button-row">
-      <!-- <div class="col s4"></div>
-      <div class="col s8"> -->
-            <p class="center-align">
-        <a class="waves-effect waves-light btn-large red accent-2" id="top-artists-button"><i class="material-icons right">music_note</i>
-          Top 10 Artists
-        </a>
-
-        <a class="waves-effect waves-light btn-large red accent-2" id="top-songs-button"><i class="material-icons right">music_note</i>
-            Top 10 Songs
-          </a>
-        </p>
+    
+    <div>
+      <button type="button" class="btn btn-primary btn-lg" id="top-artists">
+        Top 10 Artists
+      </button>
+      <div class="row">
+        <!-- Output goes here -->
+        <div id="top-10-aritists"></div>
       </div>
     </div>
     <div class="row">
