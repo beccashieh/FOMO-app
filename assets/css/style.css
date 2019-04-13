@@ -2,38 +2,31 @@
   padding: 20px;
 }
 
-/*---------------Meme page styling-------------------*/
-.results {
-  border: 1px solid lightgray;
-  flex-wrap: wrap;
-  align-content: space-around;
-  background-color: #FFFFFF;
-  margin: auto 10%;
-  padding: 20px;
+body {
+  background: url('../images/background.jpg') no-repeat center center fixed; 
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%; 
+  background-size: 100% 100%;
 }
 
-.meme-item {
-  margin: 10px;
+.nav-wrapper {
+  background-color: rgb(19, 7, 179);
+  font-family: 'Righteous', cursive;
 }
 
-.card-image {
+.brand-logo {
+  font-size: xx-large;
+}
+
+body {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.media {
+  margin: 5% auto;
+  width: 90%;
   padding: 10px;
-  background-color: lightgray;
 }
 
-.card-links {
-  padding: 20px;
-}
 
-.media-body {
-    justify-content: center;
-    align-self: center;
-    width: 50%;
-    padding: 10px;
-    margin-top: 10%;
-}
-
-/*----------------------------Movie/TV Page-----------------------------*/
-.card{
-    height: 500px;
-}

@@ -1,3 +1,16 @@
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+    authDomain: "fomo-nomo-2442f.firebaseapp.com",
+    databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+    projectId: "fomo-nomo-2442f",
+    storageBucket: "fomo-nomo-2442f.appspot.com",
+    messagingSenderId: "1064584092617"
+  };
+  firebase.initializeApp(config);
+
+
 //Click function to populate all-time popular memes.
 $(document).on("click", "#forever", function() {
   $("#results-content").empty();
@@ -8,12 +21,9 @@ $(document).on("click", "#forever", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
-    var memeArr = response.result; //shows the results
+    var memeArr = response.data.result; //shows the results
     console.log(memeArr);
 
     //div to hold result cards
@@ -26,7 +36,7 @@ $(document).on("click", "#forever", function() {
     foreverTitle.appendTo("#results-content");
 
     //For loop to create the cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
@@ -51,7 +61,7 @@ $(document).on("click", "#forever", function() {
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -69,10 +79,7 @@ $(document).on("click", "#week", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.result; //shows the results
     console.log(memeArr);
@@ -87,7 +94,7 @@ $(document).on("click", "#week", function() {
     weekTitle.appendTo("#results-content");
 
     //For loop to generate cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
@@ -112,7 +119,7 @@ $(document).on("click", "#week", function() {
 
       //Columns to control sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -130,10 +137,7 @@ $(document).on("click", "#month", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.result; //shows the results
     console.log(memeArr);
@@ -148,7 +152,7 @@ $(document).on("click", "#month", function() {
     monthTitle.appendTo("#results-content");
 
     //For loop to generate cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
@@ -172,7 +176,7 @@ $(document).on("click", "#month", function() {
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }

@@ -22,15 +22,66 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/assets/pages/news.html">News</a></li>
-          <li><a href="/assets/pages/music.html">Music</a></li>
-          <li><a href="/assets/pages/movies.html">Movies/TV</a></li>
-          <li><a href="/assets/pages/products.html">Products</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="/music.html">Music</a></li>
+          <li><a href="/movies.html">Movies/TV</a></li>
+          <li><a href="/meme.html">Memes</a></li>
         </ul>
       </div>
     </nav>
-    <!-- Modal Trigger -->
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal2">Log In</a>
+
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div> 
+              <div class="modal-footer">
+                <a href="#!" id="login-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+              </div>
+      </form>
+    </div>
+</div>
+
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal3">Create Account</a>
+
+<!-- Modal Structure -->
+<div id="modal3" class="modal">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="create-account-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </form>
+  </div>
+</div>
+ 
 
 
      <!-- Modal Trigger -->
@@ -51,19 +102,19 @@
     <div class="row text-center">
       <div class="col-12" id="header-row">
         <h1>Top Movies and TV Shows</h1>
-        <p>Please Select a date range or click submit to see what's trending now</p>
+        <p>Please Select a movie release date range or click submit to see which movies are trending now</p>
       </div>
     </div>
     <div class='row'>
       <div class="input-field col s6">
         <input placeholder='Start Date' type='date' id='startDate' class="validate" />
-        <label class='active' for='startDate'>Start Date</label>
+        <label class='active' for='startDate'>Movie Relaease Start Date</label>
       </div>
     </div>
     <div class='row'>
       <div class="input-field col s6">
         <input placeholder='End Date' type='date' id='endDate' class="validate" />
-        <label class='active' for='endDate'>End Date</label>
+        <label class='active' for='endDate'>Movie Relaease End Date</label>
       </div>
     </div>
     <button id='submit-button' type="submit" class="btn btn-success">Submit</button>

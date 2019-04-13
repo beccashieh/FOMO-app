@@ -1,15 +1,39 @@
 //--------------------------------TV/Movie Page -----------------------------
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyAO-1qqiwYrkU1LRwx1uH1VPAIsEQh_pZs",
-    authDomain: "gtcbc-click-counter-1.firebaseapp.com",
-    databaseURL: "https://gtcbc-click-counter-1.firebaseio.com",
-    projectId: "gtcbc-click-counter-1",
-    storageBucket: "gtcbc-click-counter-1.appspot.com",
-    messagingSenderId: "649973711502"
+    apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+    authDomain: "fomo-nomo-2442f.firebaseapp.com",
+    databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+    projectId: "fomo-nomo-2442f",
+    storageBucket: "fomo-nomo-2442f.appspot.com",
+    messagingSenderId: "1064584092617"
 };
 firebase.initializeApp(config);
 var database = firebase.database();
+
+//Get elements
+var txtEmail = document.getElementById('email');
+var txtPassword = document.getElementById('password');
+var createAccountBtn = document.getElementById('create-account-button');
+
+//Add login event
+createAccountBtn.addEventListener('click', e => {
+    //Get email and pass
+    var email = txtEmail.value;
+    var pass = txtPassword.value;
+    var auth = firebase.auth();
+    //sign in
+    var promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+    } else {
+        console.log("not logged in");
+    }
+});
 
 // const auth = firebase.auth();
 // auth.signInWithEmailAndPassword(email, password);
@@ -105,14 +129,30 @@ var genres = [{
     }
 ];
 
+// $('#create-account-button').click(function () {
+//     var email = $("#email").val();
+//     var password = $("#password").val();
+//     // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+//     //     // Handle Errors here.
+//     //     var errorCode = error.code;
+//     //     var errorMessage = error.message;
+//     //     // ...
+//     // });
+// });
+
+// firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//         console.log("user is signed in"); // User is signed in.
+//     } else {
+//         console.log("no user signed in");
+//     }
+// });
 
 
 database.ref().on('value', function (snapshot) {
     // If Firebase has a highPrice and highBidder stored (first case)
     if (snapshot.child("favoriteGenre").exists()) {
         hasCustomGenre = true
-
-        event.preventDefault();
         $("#movie-row").empty();
         $("#tv-row").empty();
         $("#suggest-tv-row").empty();
@@ -193,11 +233,11 @@ $('#submit-button').click(function () {
 function generateURLs() {
     if (hasCustomGenre === true) {
         movieQueryURL = "https://api.themoviedb.org/3/discover/movie?api_key=c472f72e061f4083caae81e6e937276a&primary_release_date.gte=" + startDateInput + "&primary_release_date.lte=" + endDateInput + "&language=en-US&sort_by=popularity.desc&with_genres=" + favoriteGenreID + "";
-        tvQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&language=en&page=1&original_language=en&primary_release_date.gte=" + startDateInput + "&primary_release_date.lte=" + endDateInput + "&sort_by=popularity.desc";
+        tvQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&sort_by=popularity.desc";
         suggestTVQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&language=en&page=1&sort_by=popularity.desc&with_genres=" + favoriteGenreID + "";
     } else {
         movieQueryURL = "https://api.themoviedb.org/3/discover/movie?api_key=c472f72e061f4083caae81e6e937276a&primary_release_date.gte=" + startDateInput + "&primary_release_date.lte=" + endDateInput + "&language=en-US&sort_by=popularity.desc";
-        tvQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&language=en&page=1&primary_release_date.gte=" + startDateInput + "&primary_release_date.lte=" + endDateInput + "&sort_by=popularity.desc";
+        tvQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&language=en&page=1&sort_by=popularity.desc";
     }
 }
 //Axios request
@@ -230,13 +270,13 @@ function getMovies() {
             movieHeaderContainer.appendTo("#movie-row");
         }
         var cardCount = 0
-        for (var j = 0; cardCount < 4; j++) {
+        for (var j = 0; cardCount < 6; j++) {
             if (response.data.results[j].original_language === 'en') {
                 var name = response.data.results[j].original_title;
                 var imageURL = response.data.results[j].poster_path;
                 var overview = response.data.results[j].overview;
 
-                var cardColumn = $('<div class="col s3">');
+                var cardColumn = $('<div class="col s2">');
 
                 var newCard = $('<div class="card-movie card">');
 
@@ -301,14 +341,20 @@ function getTV() {
         //     tvHeaderText.appendTo(tvHeaderContainer);
         //     tvHeaderContainer.appendTo("#tv-row");
         // }
+
+
         var cardCount = 0
-        for (var j = 0; cardCount < 4; j++) {
+
+        for (var j = 0; cardCount < 6; j++) {
+            //var responseFirstAir = Date.parse(response.data.results[j].first_air_date);
+           // var startDateMS = Date.parse(startDate);
+            //console.log(responseFirstAir);
             if (response.data.results[j].original_language === 'en') {
                 var name = response.data.results[j].original_name;
                 var imageURL = response.data.results[j].poster_path;
                 var overview = response.data.results[j].overview;
 
-                var cardColumn = $('<div class="col s3">');
+                var cardColumn = $('<div class="col s2">');
 
                 var newCard = $('<div class="card-movie card">');
 
@@ -358,13 +404,13 @@ function getSuggestedTV() {
         suggestTVHeaderContainer.appendTo("#suggest-tv-row");
 
         var cardCount = 0
-        for (var j = 0; cardCount < 4; j++) {
+        for (var j = 0; cardCount < 6; j++) {
             if (response.data.results[j].original_language === 'en') {
                 var name = response.data.results[j].original_name;
                 var imageURL = response.data.results[j].poster_path;
                 var overview = response.data.results[j].overview;
 
-                var cardColumn = $('<div class="col s3">');
+                var cardColumn = $('<div class="col s2">');
 
                 var newCard = $('<div class="card-movie card">');
 
