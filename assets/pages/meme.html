@@ -15,8 +15,9 @@
     />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 
-    <title>FOMO NOMO- Products</title>
+    <title>FOMO NOMO- Memes</title>
   </head>
+
   <body>
     <nav>
       <div class="nav-wrapper">
@@ -26,37 +27,43 @@
           <li><a href="/assets/pages/news.html">News</a></li>
           <li><a href="/assets/pages/music.html">Music</a></li>
           <li><a href="/assets/pages/movies.html">Movies/TV</a></li>
-          <li><a href="/assets/pages/products.html">Products</a></li>
+          <li><a href="/assets/pages/meme.html">Memes</a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="search row">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <h5>Choose your category below</h5>
-        <form>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Category</label>
-            <input
-              type="text"
-              class="form-control"
-              id="category-input"
-              placeholder="Ex: Electronics"
-            />
-          </div>
-        </form>
-        <button class="btn btn-info" type="submit" id="submit">Submit</button>
+    <div class="row center">
+      <div class="col s2"></div>
+      <!--Buttons for each time-frame of memes-->
+      <div class="col s8">
+        <h5>Click the button for the most popular memes!</h5>
+        <a class="waves-effect waves-light btn-large" id="forever"
+          >Top Memes of All Time</a
+        >
+        <a class="waves-effect waves-light btn-large" id="week"
+          >Top Memes of the Week</a
+        >
+        <a class="waves-effect waves-light btn-large" id="month"
+          >Top Memes of the Month</a
+        >
       </div>
-      <div class="col-2"></div>
+      <div class="col s2"></div>
     </div>
 
-    <div class="results row">
-      <div class="col-10" id="results-content"></div>
+    <hr>
+    <div class="results row center">
+      <!--Results are populated here-->
+      <div class="col s12" id="results-content"></div>
     </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../js/product.js"></script>
+    <!--Javascript links-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/meme.js"></script>
   </body>
 </html>
