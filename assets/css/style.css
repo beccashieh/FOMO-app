@@ -2,6 +2,33 @@
   padding: 20px;
 }
 
+body {
+  background: url('../images/background.jpg') no-repeat center center fixed; 
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%; 
+  background-size: 100% 100%;
+}
+
+.nav-wrapper {
+  background-color: rgb(19, 7, 179);
+  font-family: 'Righteous', cursive;
+}
+
+.brand-logo {
+  font-size: xx-large;
+}
+
+body {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.media {
+  margin: 5% auto;
+  width: 90%;
+  padding: 10px;
+}
+
 /*----------------------------Movie/TV Page-----------------------------*/
 .card{
     height: 500px;

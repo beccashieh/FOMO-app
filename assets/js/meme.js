@@ -1,3 +1,16 @@
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+    authDomain: "fomo-nomo-2442f.firebaseapp.com",
+    databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+    projectId: "fomo-nomo-2442f",
+    storageBucket: "fomo-nomo-2442f.appspot.com",
+    messagingSenderId: "1064584092617"
+  };
+  firebase.initializeApp(config);
+
+
 //Click function to populate all-time popular memes.
 $(document).on("click", "#forever", function() {
   $("#results-content").empty();
