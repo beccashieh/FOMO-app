@@ -8,12 +8,9 @@ $(document).on("click", "#forever", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
-    var memeArr = response.result; //shows the results
+    var memeArr = response.data.result; //shows the results
     console.log(memeArr);
 
     //div to hold result cards
@@ -26,7 +23,7 @@ $(document).on("click", "#forever", function() {
     foreverTitle.appendTo("#results-content");
 
     //For loop to create the cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
@@ -69,10 +66,7 @@ $(document).on("click", "#week", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.result; //shows the results
     console.log(memeArr);
@@ -87,7 +81,7 @@ $(document).on("click", "#week", function() {
     weekTitle.appendTo("#results-content");
 
     //For loop to generate cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
@@ -130,10 +124,7 @@ $(document).on("click", "#month", function() {
   console.log("this is the url " + queryURL);
 
   //Ajax function to pull the results from the Meme Generator API
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.result; //shows the results
     console.log(memeArr);
@@ -148,7 +139,7 @@ $(document).on("click", "#month", function() {
     monthTitle.appendTo("#results-content");
 
     //For loop to generate cards for 6 results.
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
 
