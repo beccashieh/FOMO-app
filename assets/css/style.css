@@ -14,6 +14,8 @@
 
 .meme-item {
   margin: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .card-image {

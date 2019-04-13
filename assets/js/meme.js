@@ -51,7 +51,7 @@ $(document).on("click", "#forever", function() {
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -112,7 +112,7 @@ $(document).on("click", "#week", function() {
 
       //Columns to control sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -172,7 +172,7 @@ $(document).on("click", "#month", function() {
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s5");
+      cardColumn.attr("class", "col s3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
