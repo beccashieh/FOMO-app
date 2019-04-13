@@ -11,6 +11,30 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
+//Get elements
+var txtEmail = document.getElementById('email');
+var txtPassword = document.getElementById('password');
+var createAccountBtn = document.getElementById('create-account-button');
+
+//Add login event
+createAccountBtn.addEventListener('click', e => {
+    //Get email and pass
+    var email = txtEmail.value;
+    var pass = txtPassword.value;
+    var auth = firebase.auth();
+    //sign in
+    var promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+    } else {
+        console.log("not logged in");
+    }
+});
+
 // const auth = firebase.auth();
 // auth.signInWithEmailAndPassword(email, password);
 // auth.createUserWithEmailAndPassword(email, password);
@@ -105,32 +129,30 @@ var genres = [{
     }
 ];
 
-$('#create-account-button').click(function () {
-    var email = $("#email").val();
-    var password = $("#password").val();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-    });
-});
+// $('#create-account-button').click(function () {
+//     var email = $("#email").val();
+//     var password = $("#password").val();
+//     // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+//     //     // Handle Errors here.
+//     //     var errorCode = error.code;
+//     //     var errorMessage = error.message;
+//     //     // ...
+//     // });
+// });
 
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        console.log("user is signed in"); // User is signed in.
-    } else {
-        console.log("no user signed in");
-    }
-});
+// firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//         console.log("user is signed in"); // User is signed in.
+//     } else {
+//         console.log("no user signed in");
+//     }
+// });
 
 
 database.ref().on('value', function (snapshot) {
     // If Firebase has a highPrice and highBidder stored (first case)
     if (snapshot.child("favoriteGenre").exists()) {
         hasCustomGenre = true
-
-        event.preventDefault();
         $("#movie-row").empty();
         $("#tv-row").empty();
         $("#suggest-tv-row").empty();
