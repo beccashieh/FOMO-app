@@ -2,13 +2,10 @@
     height: 500px;
 }
 
-html,
-body {
-    color: white;
-    ;
-}
 
 h1,
 h4{
     text-shadow: 2px 2px rgb(19, 7, 179);
+    background-color: rgb(196, 190, 190, .8);
+    color: white;
 }
