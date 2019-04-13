@@ -1,9 +1,30 @@
-.nav-item {
-    color: white;
+.brand-logo {
+  padding: 20px;
 }
 
-.jumbotron {
-    margin-bottom: 0px;
+/*---------------Meme page styling-------------------*/
+.results {
+  border: 1px solid lightgray;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: #FFFFFF;
+  margin: auto 10%;
+  padding: 20px;
+}
+
+.meme-item {
+  margin: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-image {
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.card-links {
+  padding: 20px;
 }
 
 .media-body {
@@ -13,12 +34,11 @@
     padding: 10px;
     margin-top: 10%;
 }
+
+/*-- news stylings --*/
 .news-item{
     text-align: center;
     height: 300px;
 }
-.card-image{
-    width: inherit;
-    height: auto;
-}
+
 

@@ -7,43 +7,76 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <!-- Bootstrap CSS -->
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+=======
+    <link rel="stylesheet" href="assets/css/reset.css" />
+>>>>>>> 6932fed4a8eed0865ba25fe3065f98e1dc68bc83
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    
-    <link rel="stylesheet" href="/assets/css/style.css"/>
+<<<<<<< HEAD
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/music.css" />
+=======
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+>>>>>>> 6932fed4a8eed0865ba25fe3065f98e1dc68bc83
 
     <title>FOMO NOMO- Music</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid text-center">
-      <div class="container">
-        <h1 class="display-4">FOMO...no mo</h1>
-        <p class="lead">Possible quote to go here</p>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/assets/pages/news.html">News</a></li>
+          <li><a href="/assets/pages/music.html">Music</a></li>
+          <li><a href="/assets/pages/movies.html">Movies/TV</a></li>
+          <li><a href="/assets/pages/products.html">Products</a></li>
+        </ul>
+      </div>
+    </nav>
+<<<<<<< HEAD
+
+    <!-- Buttons go here -->
+
+    <h5 class="center-align">Select the Top Artists or Top Songs</h5>
+    <div class="row" id="button-row">
+      <!-- <div class="col s4"></div>
+      <div class="col s8"> -->
+            <p class="center-align">
+        <a class="waves-effect waves-light btn-large red accent-2" id="top-artists-button"><i class="material-icons right">music_note</i>
+          Top 10 Artists
+        </a>
+
+        <a class="waves-effect waves-light btn-large red accent-2" id="top-songs-button"><i class="material-icons right">music_note</i>
+            Top 10 Songs
+          </a>
+        </p>
+=======
+    
+    <div>
+      <button type="button" class="btn btn-primary btn-lg" id="top-artists">
+        Top 10 Artists
+      </button>
+      <div class="row">
+        <!-- Output goes here -->
+        <div id="top-10-aritists"></div>
+>>>>>>> 6932fed4a8eed0865ba25fe3065f98e1dc68bc83
       </div>
     </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="/index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/assets/pages/news.html">News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/products.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/movies.html">Movies/TV</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/assets/pages/music.html">Music</a>
-        </li>
-    </nav>
+    <div class="row">
+      <!-- Output goes here -->
+      <div>
+        <div id="output"></div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/js/music.js"></script>
   </body>
-  </html>
+</html>
