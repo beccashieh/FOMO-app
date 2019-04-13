@@ -27,18 +27,26 @@ $(document).on("click", "#top-artists-button", function() {
       newCard.attr("class", "card medium artist-item");
       // Storing artist names
       var artistName = artistArray[i].name;
+      // Storing URL for artist image
       var artistImage = artistArray[i].image[3]["#text"];
+      // Storing URL for arist last.fm page
       var artistUrl = artistArray[i].url;
+      // Creating artist rank variable
       var artistRank = i + 1;
+      // Begin building cards
       var cardPicHolder = $("<div>");
       cardPicHolder.attr(
         "class",
         "responsive-img card-image hoverable artist-card"
       );
+      var cardUrl = $("<a>");
+      cardUrl.attr("href", artistUrl);
+      cardUrl.prependTo(cardPicHolder);
       var cardPic = $("<img>");
       cardPic.attr("src", artistImage);
       cardPic.attr("class", "card-image");
-      cardPic.appendTo(cardPicHolder);
+
+      cardPic.appendTo(cardUrl);
       cardPicHolder.appendTo(newCard);
       var cardBody = $("<div>");
       cardBody.attr("class", "");
@@ -72,17 +80,20 @@ $("#top-songs-button").click(function() {
       // Storing artist names
       var trackName = tracksArray[i].name;
       var trackImage = tracksArray[i].image[3]["#text"];
-      var tracktUrl = tracksArray[i].url;
+      var trackUrl = tracksArray[i].url;
       var trackRank = i + 1;
       var cardPicHolder = $("<div>");
       cardPicHolder.attr(
         "class",
         "responsive-img card-image hoverable artist-card"
       );
+      var cardUrl = $("<a>");
+      cardUrl.attr("href", trackUrl);
+      cardUrl.prependTo(cardPicHolder);
       var cardPic = $("<img>");
       cardPic.attr("src", trackImage);
       cardPic.attr("class", "card-image");
-      cardPic.appendTo(cardPicHolder);
+      cardPic.appendTo(cardUrl);
       cardPicHolder.appendTo(newCard);
       var cardBody = $("<div>");
       cardBody.attr("class", "");
