@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/meme.css" />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+
+    <title>FOMO NOMO- Memes</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="movies.html">Movies/TV</a></li>
+          <li><a href="meme.html">Memes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row center">
+      <div class="col s2"></div>
+      <!--Buttons for each time-frame of memes-->
+      <div class="col s8">
+        <h5>Click the button for the most popular memes!</h5>
+        <a class="waves-effect waves-light btn-large" id="forever"
+          >Top Memes of All Time</a
+        >
+        <a class="waves-effect waves-light btn-large" id="week"
+          >Top Memes of the Week</a
+        >
+        <a class="waves-effect waves-light btn-large" id="month"
+          >Top Memes of the Month</a
+        >
+      </div>
+      <div class="col s2"></div>
+    </div>
+
+    <hr>
+    <div class="results row center">
+      <!--Results are populated here-->
+      <div class="col s12" id="results-content"></div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Javascript links-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="../js/meme.js"></script>
+  </body>
+</html>

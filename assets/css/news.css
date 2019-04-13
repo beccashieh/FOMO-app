@@ -1,0 +1,9 @@
+
+/*-- news stylings --*/
+body {
+    text-align: center;
+}
+.news-item {
+    text-align: center;
+    height: auto;
+}

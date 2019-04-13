@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+    <title>FOMO NOMO- Movies/TV</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="/music.html">Music</a></li>
+          <li><a href="/movies.html">Movies/TV</a></li>
+          <li><a href="/meme.html">Memes</a></li>
+        </ul>
+      </div>
+    </nav>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal2">Log In</a>
+
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div> 
+              <div class="modal-footer">
+                <a href="#!" id="login-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+              </div>
+      </form>
+    </div>
+</div>
+
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal3">Create Account</a>
+
+<!-- Modal Structure -->
+<div id="modal3" class="modal">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="create-account-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </form>
+  </div>
+</div>
+ 
+
+
+     <!-- Modal Trigger -->
+     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Customize</a>
+
+     <!-- Modal Structure -->
+     <div id="modal1" class="modal">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="favorite-genre" type="text" class="validate">
+            <label class="active" for="first_name2">Favorite Movie Genre</label>
+          </div>
+        </div>
+       <div class="modal-footer">
+         <a href="#!" id="custom-button" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+       </div>
+     </div>
+    <div class="row text-center">
+      <div class="col-12" id="header-row">
+        <h1>Top Movies and TV Shows</h1>
+        <p>Please Select a movie release date range or click submit to see which movies are trending now</p>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="input-field col s6">
+        <input placeholder='Start Date' type='date' id='startDate' class="validate" />
+        <label class='active' for='startDate'>Movie Relaease Start Date</label>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="input-field col s6">
+        <input placeholder='End Date' type='date' id='endDate' class="validate" />
+        <label class='active' for='endDate'>Movie Relaease End Date</label>
+      </div>
+    </div>
+    <button id='submit-button' type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+    <div class="row" id="movie-row">
+    </div>
+
+    <div class="row" id="tv-row">
+    </div>
+
+    <div class="row" id="suggest-tv-row">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../js/movies.js"></script>
+    </div>
+
+
+
+  </body>
+
+</html>
