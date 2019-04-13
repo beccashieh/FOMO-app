@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/music.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <title>FOMO NOMO- Music</title>
   </head>
   <body>
@@ -37,23 +37,53 @@
 
     <h5 class="center-align">Select the Top Artists or Top Songs</h5>
     <div class="row" id="button-row">
-      <!-- <div class="col s4"></div>
-      <div class="col s8"> -->
+      <!-- Top 10 Artist button -->
             <p class="center-align">
         <a class="waves-effect waves-light btn-large red accent-2" id="top-artists-button"><i class="material-icons right">music_note</i>
           Top 10 Artists
         </a>
-
+        <!-- Top 10 Songs button -->
         <a class="waves-effect waves-light btn-large red accent-2" id="top-songs-button"><i class="material-icons right">music_note</i>
             Top 10 Songs
           </a>
-          <!-- <div class="input-field">
-                <i class="material-icons prefix">music_note</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
-                <label for="autocomplete-input">Autocomplete</label>
-              </div> -->
-        </p>
-      </div>
+            </p>
+          <!-- Country artist autocomplete field -->
+          <p class="center-align">
+          <div class="row" id="autocomplete-row">
+                  
+          <div class="input-field col s6">
+                <i class="material-icons prefix">map</i>
+                <input type="text" id="autocomplete-artist-input" class="autocomplete">
+                <label for="autocomplete-input">Country Name</label>
+                
+                <!-- Submit button -->
+                <a class="waves-effect waves-light btn-large red accent-2" id="top-artist-by-country"><i class="material-icons right">send</i>
+                    Top 10 Artists
+                  </a>
+                  
+          </div>
+                <!-- Country song autocomplete field -->
+                 
+                 <div class="input-field col s6">
+                <i class="material-icons prefix">map</i>
+                <input type="text" id="autocomplete-song-input" class="autocomplete">
+                <label for="autocomplete-input">Country Name</label>
+                <!-- Submit button -->
+                <a class="waves-effect waves-light btn-large red accent-2" id="top-artist-by-country"><i class="material-icons right">send</i>
+                      Top 10 Songs
+                    </a>
+                </div>
+                
+            </div>
+          </p>
+                
+            
+        
+                          
+                
+            
+        
+      
     </div>
     <div class="row">
       <!-- Output goes here -->
@@ -61,7 +91,7 @@
         <div id="output"></div>
       </div>
     </div>
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/assets/js/music.js"></script>
   </body>
