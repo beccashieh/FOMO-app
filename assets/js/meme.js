@@ -1,4 +1,4 @@
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
@@ -81,7 +81,7 @@ $(document).on("click", "#week", function() {
   //Ajax function to pull the results from the Meme Generator API
   axios.get(queryURL).then(function(response) {
     console.log(response);
-    var memeArr = response.result; //shows the results
+    var memeArr = response.data.result; //shows the results
     console.log(memeArr);
 
     //div to hold result cards
@@ -139,7 +139,7 @@ $(document).on("click", "#month", function() {
   //Ajax function to pull the results from the Meme Generator API
   axios.get(queryURL).then(function(response) {
     console.log(response);
-    var memeArr = response.result; //shows the results
+    var memeArr = response.data.result; //shows the results
     console.log(memeArr);
 
     //div to hold result cards
