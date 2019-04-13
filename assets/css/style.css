@@ -1,10 +1,7 @@
-.nav-item {
-    color: white;
+.brand-logo {
+    padding: 20px;
 }
 
-.jumbotron {
-    margin-bottom: 0px;
-}
 
 .media-body {
     justify-content: center;
@@ -15,7 +12,6 @@
 }
 
 /*----------------------------Movie/TV Page-----------------------------*/
-.card {
-    margin: 2%;
-    display: inline-flex;
+.card{
+    height: 500px;
 }
