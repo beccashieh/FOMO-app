@@ -13,13 +13,10 @@ $(document).on("click", "#top-artists-button", function() {
   //Clear output section
   $("#output").empty();
   // Perfoming an AJAX GET request to our queryURL
-  $.ajax({
-    url: topArtistQueryUrl,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(topArtistQueryUrl).then(function(response) {
     // Storing an array of artist names
-    // console.log(response);
-    var artistArray = response.artists.artist;
+    console.log(response);
+    var artistArray = response.data.artists.artist;
     // console.log(artistArray);
     // Looping over every result item
     for (var i = 0; i < artistArray.length; i++) {
@@ -68,12 +65,9 @@ $("#top-songs-button").click(function() {
   // Clear output section
   $("#output").empty();
   // Perfoming an AJAX GET request to our queryURL
-  $.ajax({
-    url: topSongQueryUrl,
-    method: "GET"
-  }).then(function(response) {
+  axios.get(topSongQueryUrl).then(function(response) {
     // Storing an array of artist names
-    var tracksArray = response.tracks.track;
+    var tracksArray = response.data.tracks.track;
     for (var i = 0; i < tracksArray.length; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card medium song-item");
