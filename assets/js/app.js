@@ -44,6 +44,14 @@ var searchURL = 'https://newsapi.org/v2/everything?' +
             cardColumn.attr('class' , 'col s3')
             newCard.appendTo(cardColumn);
             cardColumn.appendTo($('#news-item-box'));
+            
+            if (i % 4 === 0) {
+                $('#news-item-box').removeAttr('id')
+                var newRow = $('<div>')
+                newRow.attr('class', 'row')
+                newRow.attr('id', 'news-item-box')
+                newRow.appendTo($('.container'))
+            }
         }
     })
     

@@ -13,8 +13,9 @@
     padding: 10px;
     margin-top: 10%;
 }
-.card {
+.news-item{
     text-align: center;
+    height: 300px;
 }
 .card-image{
     width: inherit;
