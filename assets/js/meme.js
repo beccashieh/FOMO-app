@@ -20,7 +20,7 @@ $(document).on("click", "#forever", function() {
     apiKey;
   console.log("this is the url " + queryURL);
 
-  //Ajax function to pull the results from the Meme Generator API
+  //Axios function to pull the results from the Meme Generator API
   axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.data.result; //shows the results
@@ -31,11 +31,11 @@ $(document).on("click", "#forever", function() {
     meme.addClass("results-content");
 
     //Adds title above the result cards.
-    var foreverTitle = $("<h5>");
+    var foreverTitle = $("<h3>");
     foreverTitle.text("These are the most popular memes of all time!");
     foreverTitle.appendTo("#results-content");
 
-    //For loop to create the cards for 6 results.
+    //For loop to create the cards for 8 results.
     for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
@@ -56,7 +56,7 @@ $(document).on("click", "#forever", function() {
       var generatorLink = $("<a>");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       console.log(memeArr[i].instanceUrl);
-      generatorLink.text("Make your own!");
+      generatorLink.text("Click here to make your own!");
       generatorLink.appendTo(newCard);
 
       //Columns to control the sizing of the cards and add them to the results-content div.
@@ -78,7 +78,7 @@ $(document).on("click", "#week", function() {
     apiKey;
   console.log("this is the url " + queryURL);
 
-  //Ajax function to pull the results from the Meme Generator API
+  //Axios function to pull the results from the Meme Generator API
   axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.data.result; //shows the results
@@ -89,11 +89,11 @@ $(document).on("click", "#week", function() {
     meme.addClass("results-content");
 
     //Adds title above result cards.
-    var weekTitle = $("<h5>");
+    var weekTitle = $("<h3>");
     weekTitle.text("These are the most popular memes for the week!");
     weekTitle.appendTo("#results-content");
 
-    //For loop to generate cards for 6 results.
+    //For loop to generate cards for 8 results.
     for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
@@ -114,7 +114,7 @@ $(document).on("click", "#week", function() {
       var generatorLink = $("<a>");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       console.log(memeArr[i].instanceUrl);
-      generatorLink.text("Make your own!");
+      generatorLink.text("Click here to make your own!");
       generatorLink.appendTo(newCard);
 
       //Columns to control sizing of the cards and add them to the results-content div.
@@ -136,7 +136,7 @@ $(document).on("click", "#month", function() {
     apiKey;
   console.log("this is the url " + queryURL);
 
-  //Ajax function to pull the results from the Meme Generator API
+  //Axios function to pull the results from the Meme Generator API
   axios.get(queryURL).then(function(response) {
     console.log(response);
     var memeArr = response.data.result; //shows the results
@@ -147,11 +147,11 @@ $(document).on("click", "#month", function() {
     meme.addClass("results-content");
 
     //Adds title above result cards.
-    var monthTitle = $("<h5>");
+    var monthTitle = $("<h3>");
     monthTitle.text("These are the most popular memes for the last month!");
     monthTitle.appendTo("#results-content");
 
-    //For loop to generate cards for 6 results.
+    //For loop to generate cards for 8 results.
     for (var i = 0; i < 8; i++) {
       var newCard = $("<div>");
       newCard.attr("class", "card meme-item");
@@ -171,7 +171,7 @@ $(document).on("click", "#month", function() {
       generatorLink.attr("class", "card-links");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       console.log(memeArr[i].instanceUrl);
-      generatorLink.text("Make your own!");
+      generatorLink.text("Click here to make your own!");
       generatorLink.appendTo(newCard);
 
       //Columns to control the sizing of the cards and add them to the results-content div.
