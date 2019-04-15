@@ -11,3 +11,49 @@
   margin: auto;
   width: 50%;
 }
+
+#button-row {
+  opacity: 0.9;
+}
+
+#top-artists-button {
+  margin-left: 15px;
+}
+
+#autocomplete-artist-input {
+  opacity: 0.4;
+}
+
+#autocomplete-song-input {
+  opacity: 0.4;
+}
+
+.material-icons {
+  color: #1a237e !important;
+}
+
+.material-icons.active {
+  color: #b71c1c !important;
+}
+
+.input-field input[type="text"] + label,
+.materialize-textarea:focus:not([readonly]) + label {
+  color: #1a237e !important;
+}
+
+.input-field input[type="text"],
+.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #1a237e !important;
+  box-shadow: 0 1px 0 0 #1a237e !important;
+}
+
+.input-field input[type="text"]:focus + label,
+.materialize-textarea:focus:not([readonly]) + label {
+  color: #b71c1c !important;
+}
+
+.input-field input[type="text"]:focus,
+.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #b71c1c !important;
+  box-shadow: 0 1px 0 0 #b71c1c !important;
+}
