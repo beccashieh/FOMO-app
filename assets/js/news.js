@@ -1,3 +1,9 @@
+$('#news-query-input').click(function () {
+    $('#news-query-input').animate( {
+        width: '+=66%'
+    })
+})
+
 $('#news-search').on('click', function() {
 $(".news-item").remove()
 var newsInput = $('#news-query-input').val();
@@ -54,7 +60,7 @@ axios.get(searchURL).then(function (result) {
             if ((i % 4 === 0) && (i !== 0)) {
                 $('#news-item-box').removeAttr('id')
                 var newRow = $('<div>')
-                newRow.attr('class', 'row')
+                newRow.attr('class', 'row news-item')
                 newRow.attr('id', 'news-item-box')
                 newRow.appendTo($('#results'))
             }
