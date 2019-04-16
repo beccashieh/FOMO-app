@@ -363,7 +363,7 @@ $("#top-songs-button").click(function() {
 
 //Top 10 Artists by Country function
 $("#top-artist-country-button").click(function() {
-  country = $("#artist-country-input").val();
+  country = $("#country-input").val();
   var topArtistbyCountryUrl =
     "https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=" +
     country +
@@ -424,7 +424,7 @@ $("#top-artist-country-button").click(function() {
 
 //Top 10 Songs by Country function
 $("#top-songs-country-button").click(function() {
-  country = $("#song-country-input").val();
+  country = $("#country-input").val();
   var topSongsbyCountryUrl =
     "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=" +
     country +
