@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -36,12 +37,12 @@
 
 
     <!-- Buttons go here -->
-
-    <h5 class="center-align">Select the Top Artists or Top Songs</h5>
-    <div class="row" id="button-row">
+    <div class="row grey" id="button-row">
+    <h5 class="center-align white-text">Select the Top Artists or Top Songs</h5>
+    
       <!-- Top 10 Artist button -->
             <p class="center-align">
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale" id="top-artists-button"><i class="material-icons right">music_note</i>
+        <a class="waves-effect waves-light btn-large red accent-2 hoverbale left" id="top-artists-button"><i class="material-icons right">music_note</i>
           Top 10 Artist
         </a>
         <!-- Top 10 Songs button -->
@@ -54,12 +55,12 @@
           <div class="row" id="autocomplete-row">
           <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
-                <input type="text" id="autocomplete-artist-input" class="autocomplete">
-                <label class="red-text" for="autocomplete-input">Country Name</label>
+                <input type="text" class="autocomplete" id="artist-country-input">
+                <label class="text" id="autocomplete-artist-input" for="autocomplete-input">Country Name</label>
                 
                 <!-- Submit button -->
-                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-by-country"><i class="material-icons right">send</i>
-                    Top 10 Artists
+                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-country-button"><i class="material-icons right">send</i>
+                    Top Artists By Country
                   </a>
                   
           </div>
@@ -67,13 +68,14 @@
                  
                  <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
-                <input type="text" id="autocomplete-song-input" class="autocomplete">
-                <label class="red-text" for="autocomplete-input">Country Name</label>
+                <input type="text" class="autocomplete" id="song-country-input">
+                <label class="text" id="autocomplete-song-input" for="autocomplete-input">Country Name</label>
                 <!-- Submit button -->
-                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-by-country"><i class="material-icons right">send</i>
-                      Top 10 Songs
+                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-songs-country-button"><i class="material-icons right">send</i>
+                      Top Songs By Country
                     </a>
                 </div>
+
                 
             </div>
           </p>
@@ -87,7 +89,14 @@
       </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
     <script src="/assets/js/music.js"></script>
   </body>
 </html>
