@@ -8,6 +8,7 @@
 
 .results {
     border: 1px solid lightgray;
+    border-radius: 10px;
     flex-wrap: wrap;
     align-content: space-around;
     background-color: rgb(196, 190, 190, .8);
@@ -20,6 +21,7 @@
   #month {
     font-size: 20px;
     text-shadow: 2px 2px #383737;
+    border-radius: 10px;
   }
 
   h3 {

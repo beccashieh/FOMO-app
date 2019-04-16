@@ -14,8 +14,10 @@
     />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa"
+      rel="stylesheet"
+    />
 
     <title>FOMO NOMO</title>
   </head>
@@ -23,6 +25,20 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <!-- Dropdown Trigger -->
+        <ul id="dropdown" class="dropdown-content">
+          <li>
+            <a href="#">Sign Up<span class="badge">Sign Up</span></a>
+          </li>
+          <li>
+            <a href="#!">Login<span class="new badge">Login</span></a>
+          </li>
+          <li class="divider"></li>
+        </ul>
+
+        <a class="btn dropdown-button" href="#" data-activates="dropdown"
+          >Click Me! <i class="mdi-navigation-arrow-drop-down right"></i
+        ></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
           <li><a href="/index.html">Home</a></li>
           <li><a href="./assets/pages/news.html">News</a></li>
@@ -50,7 +66,10 @@
               <div class="col s10">
                 <span class="black-text">
                   <h4>How it works...</h4>
-                  <h5>Don't be like this guy...choose your topic to see the latest trends!</h5>
+                  <h5>
+                    Don't be like this guy...choose your topic to see the latest
+                    trends!
+                  </h5>
                 </span>
               </div>
             </div>
@@ -67,5 +86,6 @@
     ></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/assets/js/app.js"></script>
   </body>
 </html>

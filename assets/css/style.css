@@ -29,4 +29,8 @@ body {
   padding: 10px;
 }
 
+.card-panel {
+  border-radius: 10px;
+}
+
 
