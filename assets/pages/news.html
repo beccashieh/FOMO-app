@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel='stylesheet' href="../css/style.css">
   <link rel="stylesheet" href='../css/news.css'>
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
 </head>
 
 <body>
@@ -23,24 +25,34 @@
     </div>
   </nav>
   <div class='container' id='content'>
+    <br>
     <div class='row'>
       <div class='col s12'>
+        <div id='intro-text'>
         <h3>Don't let the hottest stories pass you by!</h3>
         <br>
         <h5>Search for the trending stories in the categories you're interested in!</h5>
+        </div>
+        <br>
+        <div id='search-bar'>
         <label for="news-query-input"></label>
         <input type="search" class="form-control" id="news-query-input" placeholder="botany">
         <br>
-        <button id='news-search'>Search!</button>
+        <button class='btn btn-success' id='news-search'>Search!</button>
+        </div>
       </div>
     </div>
+    <br>
+    <div id='results'>
     <div class='row' id='news-item-box'>
 
+    </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.0.min.js"
     integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src='../js/news.js'></script>
 </body>
 

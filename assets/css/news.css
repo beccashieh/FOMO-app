@@ -4,6 +4,30 @@ body {
     text-align: center;
 }
 .news-item {
+    border-radius: 10px;
     text-align: center;
     height: auto;
+}
+#intro-text {
+border-radius: 10px;
+border: 1px solid lightgray;
+flex-wrap: wrap;
+align-content: space-around;
+background-color: rgb(196, 190, 190, .8);
+margin-left: 0;
+margin-right: 0;
+}
+
+#search-bar {
+    border-radius: 10px;
+    background-color: rgba(226, 226, 226, 0.8);
+}
+
+#results {
+display: none;
+border-radius: 10px;
+border: 1px solid lightgray;
+flex-wrap: wrap;
+align-content: space-around;
+background-color: rgb(196, 190, 190, .8);
 }
