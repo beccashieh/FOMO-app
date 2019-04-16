@@ -2,11 +2,15 @@
 <html lang="en">
 
   <head>
+    <!--jQuery-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/movies.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -20,7 +24,7 @@
   </head>
 
   <body>
-    <div id="content-container">
+
       <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center">FOMO...no mo</a>
@@ -36,7 +40,7 @@
 
       <!-- SIGN UP MODAL -->
       <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal-signup">Sign Up</a>
+      <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
       <div id="modal-signup" class="modal">
         <div class="modal-content">
           <h4>Sign up</h4><br />
@@ -49,13 +53,17 @@
               <input type="password" id="signup-password" required />
               <label for="signup-password">Choose password</label>
             </div>
+            <div class="input-field">
+              <input type="text" id="favorite-genre" required />
+              <label for="favorite-genre">Favorite Movie Genre</label>
+            </div>
             <button class="btn yellow darken-2 z-depth-0">Sign up</button>
           </form>
         </div>
       </div>
       <!-- LOGIN MODAL -->
       <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal-login">Login</a>
+      <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
       <div id="modal-login" class="modal">
         <div class="modal-content">
           <h4>Login</h4><br />
@@ -72,94 +80,104 @@
           </form>
         </div>
       </div>
-      <!-- CUSTOMIZE MODAL -->
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal-create">Add Favorite Genre</a>
-      <div id="modal-create" class="modal">
-        <div class="modal-content">
-          <h4>Add Favorite Genre</h4><br />
-          <form id="create-form">
-            <div class="input-field">
-              <input type="text" id="genre" required>
-              <label for="genre">Genre</label>
-            </div>
-            <button class="btn yellow darken-2 z-depth-0">Submit</button>
-          </form>
-        </div>
-      </div>
 
       <!-- LOGOUT -->
-      <a class="waves-effect waves-light btn " id="logout">Logout</a>
+      <a class="waves-effect waves-light btn logged-in" id="logout">Logout</a>
+    <div id="content-container">
 
 
 
-
-      <div class="row text-center">
-        <div class="row text-center">
-          <div class="col-12" id="header-row">
+      <div class="row center-align">
+        <div class="row center-align">
+          <div class="col-12 center-align" id="header-row">
             <h1>Top Movies and TV Shows</h1>
-            <p>Please Select a movie release date range or click submit to see which movies are trending now</p>
+            <h5 id="instructions" class="center-align">Please Select a movie release date range or click submit to see
+              which movies are trending now</h5>
           </div>
         </div>
-        <div class='row'>
+        <div class='row' id='start-date-div'>
           <div class="input-field col s6">
             <input placeholder='Start Date' type='date' id='startDate' class="validate" />
             <label class='active date-lable' for='startDate'>Movie Release Start Date</label>
           </div>
         </div>
-        <div class='row'>
+        <div class='row' id= 'end-date-div'>
           <div class="input-field col s6">
             <input placeholder='End Date' type='date' id='endDate' class="validate" />
             <label class='active date-lable' for='endDate'>Movie Release End Date</label>
           </div>
         </div>
-        <button id='submit-button' type="submit" class="btn btn-success">Submit</button>
+        <button id='date-button' type="submit" class="btn btn-success">Submit</button>
       </div>
+      <!-- CUSTOMIZE MODAL -->
+      <!-- Modal Trigger -->
+      <div class = "center-align">
+            <a class="waves-effect waves-light btn modal-trigger logged-in" href="#modal-create">Change
+              Favorite
+              Genre</a>
+            <div id="modal-create" class="modal center-align">
+              <div class="modal-content">
+                <h4>Change Favorite Genre</h4><br />
+                <form id="create-form">
+                  <div class="input-field">
+                    <input type="text" id="genre" required>
+                    <label for="genre">Genre</label>
+                  </div>
+                  <button class="btn yellow darken-2 z-depth-0 ">Submit</button>
+                </form>
+              </div>
+            </div>
+            </div>
+
+      <h3 id="movie-header"></h3>
+      <div class="row" id="movie-row"></div>
+
+      <h3 id="tv-header"></h3>
+      <div class="row" id="tv-row"></div>
+
+      <h3 id="suggestTV-header"></h3>
+      <div class="row" id="suggestTV-row"></div>
 
 
-      <div id="row">
-        <div class="col s12 m6" id="card-row">
-          
 
-          </div>
-        </div>
+
+
 
         <!--<div class="row" id="tv-row">
         </div>
 
         <div class="row" id="suggest-tv-row">
         </div>-->
-      </div>
-    </div>
-  
 
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+      
 
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
-        authDomain: "fomo-nomo-2442f.firebaseapp.com",
-        databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
-        projectId: "fomo-nomo-2442f",
-        storageBucket: "fomo-nomo-2442f.appspot.com",
-        messagingSenderId: "1064584092617"
-      };
-      firebase.initializeApp(config);
 
-      // make auth and firestore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-    </script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-     <!-- Compiled and minified JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/movies.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+          authDomain: "fomo-nomo-2442f.firebaseapp.com",
+          databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+          projectId: "fomo-nomo-2442f",
+          storageBucket: "fomo-nomo-2442f.appspot.com",
+          messagingSenderId: "1064584092617"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+      </script>
+
+      
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="../js/auth.js"></script>
+      <script src="../js/movies.js"></script>
 
 
   </body>
