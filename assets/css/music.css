@@ -7,6 +7,20 @@
   cursor: pointer;
 }
 
+.results {
+  /* border: 1px solid lightgray; */
+  border-radius: 10px;
+  /* flex-wrap: wrap; */
+  align-content: space-around;
+  background-color: rgb(196, 190, 190, 0.8);
+  margin: auto 10%;
+  /* padding: 20px; */
+}
+
+.card {
+  border: 1px solid #383737;
+}
+
 #button-row {
   margin: auto;
   width: 50%;
