@@ -1,5 +1,7 @@
 .brand-logo {
   padding: 20px;
+  text-shadow: 2px 2px #383737;
+  font-size: xx-large;
 }
 
 body {
@@ -12,21 +14,23 @@ body {
 
 .nav-wrapper {
   background-color: rgb(19, 7, 179);
-  font-family: 'Righteous', cursive;
+  font-family: 'Comfortaa', cursive;
+  text-shadow: 2px 2px #383737;
 }
 
-.brand-logo {
-  font-size: xx-large;
-}
 
 body {
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .media {
   margin: 5% auto;
   width: 90%;
   padding: 10px;
+}
+
+.card-panel {
+  border-radius: 10px;
 }
 
 

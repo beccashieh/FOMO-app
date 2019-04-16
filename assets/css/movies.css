@@ -2,13 +2,42 @@
     height: 500px;
 }
 
-html,
-body {
-    color: white;
-    ;
-}
 
 h1,
-h4{
+h3,
+h5{
     text-shadow: 2px 2px rgb(19, 7, 179);
+    color: white;
 }
+
+#content-container {
+    background-color: rgb(196, 190, 190, .8);
+    margin: 0px 50px 0px 50px;
+}
+
+.input-field label,
+.input-field input[type=text]:focus,
+.input-field input[type=text]:focus+label {
+    color: #000;
+}
+
+#movie-header,
+#tv-header,
+#suggestTV-header{
+    display: none;
+}
+
+#start-date-div,
+#end-date-div{
+    background-color: rgb(255, 255, 255, .8);
+    width: 50%;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .card .card-title {
+        font-size: 20px;
+    }
+}
+
+
