@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -54,12 +55,12 @@
           <div class="row" id="autocomplete-row">
           <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
-                <input type="text" class="autocomplete">
+                <input type="text" class="autocomplete" id="artist-country-input">
                 <label class="text" id="autocomplete-artist-input" for="autocomplete-input">Country Name</label>
                 
                 <!-- Submit button -->
-                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-by-country"><i class="material-icons right">send</i>
-                    Artists By Country
+                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-country-button"><i class="material-icons right">send</i>
+                    Top Artists By Country
                   </a>
                   
           </div>
@@ -67,11 +68,11 @@
                  
                  <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
-                <input type="text" class="autocomplete">
+                <input type="text" class="autocomplete" id="song-country-input">
                 <label class="text" id="autocomplete-song-input" for="autocomplete-input">Country Name</label>
                 <!-- Submit button -->
-                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-by-country"><i class="material-icons right">send</i>
-                      Songs By Country
+                <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-songs-country-button"><i class="material-icons right">send</i>
+                      Top Songs By Country
                     </a>
                 </div>
 
