@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 $('#news-query-input').click(function () {
     $('#news-query-input').animate( {
         width: '+=66%'
@@ -37,10 +45,36 @@ axios.get(searchURL).then(function (result) {
             if (result.data.articles[i].urlToImage === null) {
                 console.log('working')
                 cardBody.append('<h3>' + result.data.articles[i].title + '</h3>')
-                cardBody.append('<h5>' + result.data.articles[i].source.name + '</6>')
+                cardBody.append('<h5>' + result.data.articles[i].source.name + '</h5>')
+            } else if (result.data.articles[i].title.length > 60) {
+            titleConcat = ''
+            for (var j = 0; j < 58; j++) {
+               titleConcat += result.data.articles[i].title[j]
+            }
+            titleAbbreviated = titleConcat + '...'
+            cardBody.append('<h3>' + titleAbbreviated + '</h3>')
+            cardBody.append('<p>' + result.data.articles[i].source.name + '</p>')
+            revealDiv = $('<div>')
+            revealDiv.attr('class', 'card-reveal')
+            icon = $('<i>')
+            icon.attr('class' , 'material-icons right')
+            icon.text('close')
+            revealDiv.append(icon)
+            revealDiv.append('<h3>' + result.data.articles[i].title + '</h3>')
+            revealDiv.append('<p>' + result.data.articles[i].source.name + '</p>')
+            cardBody.append(revealDiv);
+
+
+
+
+
+
+
             } else {
             cardBody.append('<h5>' + result.data.articles[i].title + '</h5>')
-            cardBody.append('<p>' + result.data.articles[i].source.name + '</p>') }
+            console.log(result.data.articles[i].title.length)
+            cardBody.append('<p>' + result.data.articles[i].source.name + '</p>') 
+            }
             cardBody.appendTo(newCard)
 
             var cardLinks = $('<div>')
@@ -99,7 +133,7 @@ axios.get(searchURL).then(function (result) {
             newCard.appendTo(cardColumn);
             cardColumn.appendTo($('#news-item-box'));
 
-            $('#results').slideDown(1000)
+            $('#results').slideDown(1500)
 
     })
     

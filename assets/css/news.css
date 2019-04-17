@@ -7,7 +7,7 @@ body {
 .news-item {
     border-radius: 10px;
     text-align: center;
-    height: auto;
+    height: 400px;
 }
 
 #intro-text {
@@ -21,6 +21,8 @@ margin-right: 0;
 }
 
 #search-bar {
+    padding: 2%;
+    margin-left: 20%;
     text-align: center;
     border-radius: 10px;
     background-color: rgba(226, 226, 226, 0.8);
