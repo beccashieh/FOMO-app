@@ -9,8 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-$(document).ready(function(){
-  $('.modal').modal();
+$(document).ready(function() {
+  $(".modal").modal();
 });
 
 //Click function to populate all-time popular memes.
@@ -18,7 +18,7 @@ $(document).on("click", "#forever", function() {
   $("#results-content").empty();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "https://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=&apiKey=" +
+    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
@@ -76,7 +76,7 @@ $(document).on("click", "#week", function() {
   $("#weeklyTitle").show();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "https://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=7&apiKey=" +
+    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=7&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
@@ -134,7 +134,7 @@ $(document).on("click", "#month", function() {
   $("#monthlyTitle").show();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "//version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=30&apiKey=" +
+    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=30&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
@@ -172,9 +172,12 @@ $(document).on("click", "#month", function() {
       var generatorLink = $("<a>");
       generatorLink.attr("class", "card-links");
       generatorLink.attr("href", memeArr[i].instanceUrl);
-      console.log(memeArr[i].instanceUrl);
       generatorLink.text("Click here to make your own!");
       generatorLink.appendTo(newCard);
+      // var favButton = $("<btn>");
+      // favButton.attr("class", "fav waves-effect waves-light btn");
+      // favButton.appendTo(memeHolder);
+      // favButton.text("Add to Favorites");
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
@@ -184,3 +187,18 @@ $(document).on("click", "#month", function() {
     }
   });
 });
+
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
+
+//Favorites section.
+//on click of individual cards, item will be added to the favorites div.
+// $(document).on("click", ".fav", function() {
+//   var favResult = $("<div>");
+//   favResult.attr("class", "fav-result-img");
+//   favResult.attr("src", memePic);
+//   favResult.prepend(".favorites");
+// });
+
+//on click of favorites button will display the favorites div with the resulting cards.
