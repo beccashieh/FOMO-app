@@ -1,28 +1,4 @@
 // //--------------------------------TV/Movie Page -----------------------------
-// // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
-//     authDomain: "fomo-nomo-2442f.firebaseapp.com",
-//     databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
-//     projectId: "fomo-nomo-2442f",
-//     storageBucket: "fomo-nomo-2442f.appspot.com",
-//     messagingSenderId: "1064584092617"
-// };
-// firebase.initializeApp(config);
-// var database = firebase.database();
-
-// //Create global variables
-// var movieQueryURL = "";
-// var tvQueryURL = "";
-// var suggestTVQueryURL = "";
-// var startDate = "";
-// var endDate = "";
-// var favoriteGenre = "";
-// var favoriteGenreID = 0;
-// var hasCustomGenre = false;
-// var startDateInput = "";
-// var endDateInput = "";
-
 
 let movieQueryURL = '';
 let tvQueryURL = '';
