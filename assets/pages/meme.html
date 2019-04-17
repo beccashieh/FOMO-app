@@ -15,12 +15,13 @@
     />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/meme.css" />
-    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa"
+      rel="stylesheet"
+    />
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-
 
     <title>FOMO NOMO- Memes</title>
   </head>
@@ -39,25 +40,49 @@
       </div>
     </nav>
 
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1"
+      >Click Me!</a
+    >
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal row center">
+      <div class="modal-content">
+        <h4>!WARNING!</h4>
+        <p>Some of the content on this page is not safe for work and may be considered offensive to some.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Ok</a
+        >
+      </div>
+    </div>
     <div class="row center">
       <div class="col s2"></div>
       <!--Buttons for each time-frame of memes-->
       <div class="col s8">
         <h5>Click the button for the most popular memes!</h5>
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale" id="forever"
+        <a
+          class="waves-effect waves-light btn-large red accent-2 hoverbale"
+          id="forever"
           >Top Memes of All Time</a
         >
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale" id="week"
+        <a
+          class="waves-effect waves-light btn-large red accent-2 hoverbale"
+          id="week"
           >Top Memes of the Week</a
         >
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale" id="month"
+        <a
+          class="waves-effect waves-light btn-large red accent-2 hoverbale"
+          id="month"
           >Top Memes of the Month</a
         >
       </div>
       <div class="col s2"></div>
     </div>
 
-    <hr>
+    <hr />
+
     <div class="results row center">
       <!--Results are populated here-->
       <div class="col s12" id="results-content"></div>
@@ -71,7 +96,7 @@
       integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
       crossorigin="anonymous"
     ></script>
-    
+
     <script src="../js/meme.js"></script>
   </body>
 </html>
