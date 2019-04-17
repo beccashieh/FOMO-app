@@ -1,15 +1,17 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+  authDomain: "fomo-nomo-2442f.firebaseapp.com",
+  databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+  projectId: "fomo-nomo-2442f",
+  storageBucket: "fomo-nomo-2442f.appspot.com",
+  messagingSenderId: "1064584092617"
+};
+firebase.initializeApp(config);
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
-    authDomain: "fomo-nomo-2442f.firebaseapp.com",
-    databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
-    projectId: "fomo-nomo-2442f",
-    storageBucket: "fomo-nomo-2442f.appspot.com",
-    messagingSenderId: "1064584092617"
-  };
-  firebase.initializeApp(config);
-
+$(document).ready(function(){
+  $('.modal').modal();
+});
 
 //Click function to populate all-time popular memes.
 $(document).on("click", "#forever", function() {
