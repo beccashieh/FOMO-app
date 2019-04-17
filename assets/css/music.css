@@ -1,4 +1,14 @@
 /* Change cursor to pointer */
+.sidenav {
+  background-color: rgb(196, 190, 190, 0.8);
+  border: 2px solid white;
+}
+
+.sidenav-trigger {
+  background-color: rgb(196, 190, 190, 1);
+  padding: 10px;
+}
+
 .artist-item {
   cursor: pointer;
 }

@@ -38,6 +38,10 @@ $(document).ready(function() {
   $(".card").modal();
 });
 
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
+
 //listen for auth status changes
 // auth.onAuthStateChanged(user => {
 //   // CHANGE IF THE USER IS LOGGED IN
@@ -117,7 +121,7 @@ $(document).on("click", "#top-artists-button", function() {
     // Looping over every result item
     for (var i = artistArray.length - 1; i >= 0; i--) {
       var newCard = $("<div>");
-      newCard.attr("class", "card medium artist-item");
+      newCard.attr("class", "card med artist-item");
       // Storing artist names
       var artistName = artistArray[i].name;
       // Storing URL for artist image
