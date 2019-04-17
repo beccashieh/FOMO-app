@@ -16,7 +16,7 @@ $(document).on("click", "#forever", function() {
   $("#results-content").empty();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=&apiKey=" +
+    "https://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
@@ -74,7 +74,7 @@ $(document).on("click", "#week", function() {
   $("#weeklyTitle").show();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=7&apiKey=" +
+    "https://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=7&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
@@ -132,7 +132,7 @@ $(document).on("click", "#month", function() {
   $("#monthlyTitle").show();
   var apiKey = "a705723d-1d59-4e23-9395-56d8d2087e71";
   var queryURL =
-    "http://version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=30&apiKey=" +
+    "//version1.api.memegenerator.net//Instances_Select_ByPopular?languageCode=en&pageIndex=0&urlName=&days=30&apiKey=" +
     apiKey;
   console.log("this is the url " + queryURL);
 
