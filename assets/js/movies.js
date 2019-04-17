@@ -223,20 +223,6 @@ loginForm.addEventListener('submit', (e) => {
     });
 });
 
-
-
-// const createCards = (data) => {
-
-//     data.forEach(doc => {
-//         const card = doc.data();
-//         genre = card.genre;
-//     });
-
-//     generateGenreID();
-//     generateURLs();
-//     getMovies();
-// }
-
 const generateGenreID = () => {
     for (i = 0; i < genreOptions.length; i++) {
         if (genre === genreOptions[i].name) {
