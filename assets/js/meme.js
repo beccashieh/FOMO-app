@@ -1,15 +1,17 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+  authDomain: "fomo-nomo-2442f.firebaseapp.com",
+  databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+  projectId: "fomo-nomo-2442f",
+  storageBucket: "fomo-nomo-2442f.appspot.com",
+  messagingSenderId: "1064584092617"
+};
+firebase.initializeApp(config);
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
-    authDomain: "fomo-nomo-2442f.firebaseapp.com",
-    databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
-    projectId: "fomo-nomo-2442f",
-    storageBucket: "fomo-nomo-2442f.appspot.com",
-    messagingSenderId: "1064584092617"
-  };
-  firebase.initializeApp(config);
-
+$(document).ready(function() {
+  $(".modal").modal();
+});
 
 //Click function to populate all-time popular memes.
 $(document).on("click", "#forever", function() {
@@ -170,9 +172,12 @@ $(document).on("click", "#month", function() {
       var generatorLink = $("<a>");
       generatorLink.attr("class", "card-links");
       generatorLink.attr("href", memeArr[i].instanceUrl);
-      console.log(memeArr[i].instanceUrl);
       generatorLink.text("Click here to make your own!");
       generatorLink.appendTo(newCard);
+      // var favButton = $("<btn>");
+      // favButton.attr("class", "fav waves-effect waves-light btn");
+      // favButton.appendTo(memeHolder);
+      // favButton.text("Add to Favorites");
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
@@ -182,3 +187,18 @@ $(document).on("click", "#month", function() {
     }
   });
 });
+
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
+
+//Favorites section.
+//on click of individual cards, item will be added to the favorites div.
+// $(document).on("click", ".fav", function() {
+//   var favResult = $("<div>");
+//   favResult.attr("class", "fav-result-img");
+//   favResult.attr("src", memePic);
+//   favResult.prepend(".favorites");
+// });
+
+//on click of favorites button will display the favorites div with the resulting cards.

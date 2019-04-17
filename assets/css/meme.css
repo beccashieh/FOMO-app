@@ -18,7 +18,8 @@
   
   #forever,
   #week,
-  #month {
+  #month,
+  #favorites {
     font-size: 20px;
     text-shadow: 2px 2px #383737;
     border-radius: 10px;
@@ -30,7 +31,7 @@
   }
   
   .card {
-    border: 4px solid #383737;
+    border: 2px solid #383737;
   }
   
   a {
@@ -40,3 +41,25 @@
     padding: 20px;
     text-shadow: -1px 1px #8d8b8b;
   }
+
+  .nav-wrapper {
+    background-color: rgb(19, 7, 179);
+    font-family: 'Comfortaa', cursive;
+    text-shadow: -1px 1px #383737;
+  }
+
+  .sidenav {
+    background-color: rgb(196, 190, 190, .8);
+    border: 2px solid white;
+  }
+
+  .sidenav-trigger { 
+    background-color: rgb(196, 190, 190, 1);
+    padding: 10px;
+  }
+
+  .modal-trigger {
+    margin-left: 18px;
+  }
+
+  
