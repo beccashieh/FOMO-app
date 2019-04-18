@@ -1,4 +1,14 @@
 /* Change cursor to pointer */
+.sidenav {
+  background-color: rgb(196, 190, 190, 0.8);
+  border: 2px solid white;
+}
+
+.sidenav-trigger {
+  background-color: rgb(196, 190, 190, 1);
+  padding: 10px;
+}
+
 .artist-item {
   cursor: pointer;
 }
@@ -14,20 +24,20 @@
   align-content: space-around;
   background-color: rgb(196, 190, 190, 0.8);
   margin: auto 10%;
+
   /* padding: 20px; */
 }
 
 .card {
-  border: 1px solid #383737;
+  border: 2px solid #383737;
 }
 
 #button-row {
   margin: auto;
+  margin-bottom: 10px;
   width: 50%;
-}
-
-#button-row {
   opacity: 0.9;
+  border-radius: 10px;
 }
 
 #top-artists-button {

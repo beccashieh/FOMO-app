@@ -25,7 +25,17 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="waves-effect waves-light btn-sm">menu</i></a
+        >
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="./music.html">Music</a></li>
+          <li><a href="./movies.html">Movies/TV</a></li>
+          <li><a href="./meme.html">Memes</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
           <li><a href="../../index.html">Home</a></li>
           <li><a href="./news.html">News</a></li>
           <li><a href="./music.html">Music</a></li>
@@ -123,17 +133,16 @@
                     Top Songs By Country
                   </a>
                 </p>
-              </div>
-                  
-          
-                <!-- Country song autocomplete field -->
+              </div>           
+                <!-- Country autocomplete field -->
                 <div class="col s2"></div>
                 <p class="center-align">
                  <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
                 <input type="text" class="autocomplete" id="country-input">
-                <label class="text" id="autocomplete-song-input" for="autocomplete-input">Country Name</label>
+                <label class="text" id="autocomplete-input" for="autocomplete-input">Country Name</label>
                  </p>
+                </div>
             </div>
           </p>
   
@@ -142,7 +151,7 @@
     <div class="results row">
       <!-- Output goes here -->
       <div>
-        <div id="output"></div>
+        <div class="col s12" id="output"></div>
       </div>
     </div>
     
