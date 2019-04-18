@@ -1,3 +1,5 @@
+var newsInput = '';
+var userLoggedIn = false;
 $(document).ready(function() {
     $(".sidenav").sidenav();
   });
@@ -16,8 +18,13 @@ auth.onAuthStateChanged(user => {
         // runs every time something changes in the database
         db.collection('users').doc(user.uid).onSnapshot(doc => {
             //How you get data
-            genre = doc.data().genre;
-
+            userLoggedIn = true;
+            userID = doc.id;
+            newsTopic = doc.data().newsTopic;
+            console.log(newsTopic)
+            $('#news-query-input').text(newsTopic)
+            newsInput = newsTopic;
+            genNews();
         });
     } else {
 
@@ -75,23 +82,22 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 
-
-
-
-
-
 $('#news-query-input').click(function () {
     $('#news-query-input').animate( {
         width: '80%'
     })
 })
-
-$('#news-search').on('click', function() {
+function genNews() {
 $(".news-item").remove()
-var newsInput = $('#news-query-input').val();
+if (userLoggedIn === false) {
+newsInput = $('#news-query-input').val();
 if (newsInput === '') {
     newsInput = 'javascript'
 }
+} else {
+    newsInput = newsTopic;
+}
+
 var searchURL = 'https://newsapi.org/v2/everything?' +
 'q=' + newsInput +
 '&apiKey=4d40ce544309489b9dd043dfac1e6abf'
@@ -124,9 +130,9 @@ axios.get(searchURL).then(function (result) {
                 console.log('working')
                 cardBody.append('<h3>' + result.data.articles[i].title + '</h3>')
                 cardBody.append('<h5>' + result.data.articles[i].source.name + '</h5>')
-            } else if (result.data.articles[i].title.length > 60) {
+            } else if (result.data.articles[i].title.length > 55) {
             titleConcat = ''
-            for (var j = 0; j < 58; j++) {
+            for (var j = 0; j < 52; j++) {
                titleConcat += result.data.articles[i].title[j]
             }
             titleAbbreviated = titleConcat + '...'
@@ -209,4 +215,5 @@ axios.get(searchURL).then(function (result) {
 
     })
     
-})
+}
+$('#news-search').on('click', genNews())
