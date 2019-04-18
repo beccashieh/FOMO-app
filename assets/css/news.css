@@ -1,5 +1,14 @@
 
 /*-- news stylings --*/
+.sidenav {
+    background-color: rgb(196, 190, 190, .8);
+    border: 2px solid white;
+  }
+  
+  .sidenav-trigger { 
+    background-color: rgb(196, 190, 190, 1);
+    padding: 10px;
+  }
 body {
     text-align: center;
     align-content: center;
@@ -19,7 +28,6 @@ background-color: rgb(196, 190, 190, .8);
 margin-left: 0;
 margin-right: 0;
 }
-
 #search-bar {
     padding: 2%;
     margin-left: 20%;
@@ -34,12 +42,16 @@ margin-right: 0;
 }
 #news-query-input:hover { 
     
-    background-color: rgba(38, 166, 154, 0.4);
+    background-color: rgba(255, 82, 82, 0.4);
 }
 #news-query-input:focus { 
-    background-color: rgba(38, 166, 154, 0.2);
+    border-bottom: 1px solid rgba(255, 82, 82);
+    background-color: rgba(255, 82, 82, 0.2);
 }
-
+.card-image {
+    border-radius: 10px;
+    
+}
 #results {
 display: none;
 border-radius: 10px;

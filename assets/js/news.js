@@ -1,3 +1,6 @@
+$(document).ready(function() {
+    $(".sidenav").sidenav();
+  });
 $(document).ready(function () {
     $('.modal').modal();
 });
@@ -79,16 +82,20 @@ loginForm.addEventListener('submit', (e) => {
 
 $('#news-query-input').click(function () {
     $('#news-query-input').animate( {
-        width: '+=66%'
+        width: '80%'
     })
 })
 
 $('#news-search').on('click', function() {
 $(".news-item").remove()
 var newsInput = $('#news-query-input').val();
+if (newsInput === '') {
+    newsInput = 'javascript'
+}
 var searchURL = 'https://newsapi.org/v2/everything?' +
 'q=' + newsInput +
 '&apiKey=4d40ce544309489b9dd043dfac1e6abf'
+
 axios.get(searchURL).then(function (result) {
         event.preventDefault()
         console.log(searchURL)
@@ -123,7 +130,8 @@ axios.get(searchURL).then(function (result) {
                titleConcat += result.data.articles[i].title[j]
             }
             titleAbbreviated = titleConcat + '...'
-            cardBody.append('<h3>' + titleAbbreviated + '</h3>')
+
+            cardBody.append('<h5>' + titleAbbreviated + '</h5>')
             cardBody.append('<p>' + result.data.articles[i].source.name + '</p>')
             revealDiv = $('<div>')
             revealDiv.attr('class', 'card-reveal')
@@ -133,14 +141,7 @@ axios.get(searchURL).then(function (result) {
             revealDiv.append(icon)
             revealDiv.append('<h3>' + result.data.articles[i].title + '</h3>')
             revealDiv.append('<p>' + result.data.articles[i].source.name + '</p>')
-            cardBody.append(revealDiv);
-
-
-
-
-
-
-
+            newCard.append(revealDiv);
             } else {
             cardBody.append('<h5>' + result.data.articles[i].title + '</h5>')
             console.log(result.data.articles[i].title.length)
