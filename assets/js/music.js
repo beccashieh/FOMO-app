@@ -8,26 +8,22 @@ var topSongQueryUrl =
   "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=" +
   apiKey +
   "&limit=10&format=json";
+var countryUrl = "https://restcountries.eu/rest/v2/all?fields=name";
 var userLoggedIn = false;
 var favArtist = "";
 
 //Autocomplete function for country list
 $(document).ready(function() {
-  $(function() {
-    $.ajax({
-      type: "GET",
-      url: "https://restcountries.eu/rest/v2/all?fields=name",
-      success: function(response) {
-        var countryArray = response;
-        var dataCountry = {};
-        for (var i = 0; i < countryArray.length; i++) {
-          dataCountry[countryArray[i].name] = countryArray[i].flag; //countryArray[i].flag or null
-        }
-        $("input.autocomplete").autocomplete({
-          data: dataCountry,
-          limit: 2 // The max amount of results that can be shown at once. Default: Infinity.
-        });
-      }
+  axios.get(countryUrl).then(function(response) {
+    console.log(response);
+    var countryArray = response.data;
+    var dataCountry = {};
+    for (var i = 0; i < countryArray.length; i++) {
+      dataCountry[countryArray[i].name] = countryArray[i].flag; //countryArray[i].flag or null
+    }
+    $("input.autocomplete").autocomplete({
+      data: dataCountry,
+      limit: 2 // The max amount of results that can be shown at once. Default: Infinity.
     });
   });
 });
