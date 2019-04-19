@@ -48,6 +48,15 @@ h5{
         text-shadow: 2px 2px #383737;
         border-radius: 10px;
 }
+.sidenav {
+    background-color: rgb(196, 190, 190, .8);
+    border: 2px solid white;
+}
+
+.sidenav-trigger {
+    background-color: rgb(196, 190, 190, 1);
+    padding: 10px;
+}
 
 @media (max-width: 768px) {
     .card .card-title {
