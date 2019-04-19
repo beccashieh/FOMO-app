@@ -1,3 +1,9 @@
+var newsInput = '';
+var userLoggedIn = false;
+var searchNum = 0;
+$(document).ready(function() {
+    $(".sidenav").sidenav();
+  });
 $(document).ready(function () {
     $('.modal').modal();
 });
@@ -13,8 +19,14 @@ auth.onAuthStateChanged(user => {
         // runs every time something changes in the database
         db.collection('users').doc(user.uid).onSnapshot(doc => {
             //How you get data
-            genre = doc.data().genre;
-
+            userLoggedIn = true;
+            userID = doc.id;
+            newsTopic = doc.data().newsTopic;
+            console.log(newsTopic)
+            $('#news-query-input').text(newsTopic)
+            newsInput = newsTopic;
+            genNews();
+            searchNum ++;
         });
     } else {
 
@@ -50,7 +62,7 @@ const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    console.log("Logged Out")
+    console.log("Logged Out");
 });
 
 // login
@@ -72,23 +84,32 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 
-
-
-
-
-
 $('#news-query-input').click(function () {
     $('#news-query-input').animate( {
-        width: '+=66%'
+        width: '80%'
     })
 })
-
-$('#news-search').on('click', function() {
+function genNews() {
+console.log('working')
 $(".news-item").remove()
-var newsInput = $('#news-query-input').val();
+if (userLoggedIn === false) {
+newsInput = $('#news-query-input').val();
+if (newsInput === '') {
+    newsInput = 'javascript'
+}
+} else if (searchNum >= 1) {
+    newsInput = $('#news-query-input').val();
+if (newsInput === '') {
+    newsInput = 'javascript'
+}
+} else {
+    newsInput = newsTopic;
+}
+
 var searchURL = 'https://newsapi.org/v2/everything?' +
 'q=' + newsInput +
 '&apiKey=4d40ce544309489b9dd043dfac1e6abf'
+
 axios.get(searchURL).then(function (result) {
         event.preventDefault()
         console.log(searchURL)
@@ -114,37 +135,39 @@ axios.get(searchURL).then(function (result) {
             var cardBody = $('<div>')
             cardBody.attr('class', 'card-content')
             if (result.data.articles[i].urlToImage === null) {
-                console.log('working')
-                cardBody.append('<h3>' + result.data.articles[i].title + '</h3>')
-                cardBody.append('<h5>' + result.data.articles[i].source.name + '</h5>')
-            } else if (result.data.articles[i].title.length > 60) {
+                cardPicHolder.remove();
+                cardBody.append('<h4>' + result.data.articles[i].title + '</h4>')
+                cardBody.append('<h6>' + result.data.articles[i].source.name + '</h6>')
+            } else if (result.data.articles[i].title.length > 55) {
             titleConcat = ''
-            for (var j = 0; j < 58; j++) {
+            for (var j = 0; j < 52; j++) {
                titleConcat += result.data.articles[i].title[j]
             }
             titleAbbreviated = titleConcat + '...'
-            cardBody.append('<h3>' + titleAbbreviated + '</h3>')
+
+            cardBody.append('<h5 class= "activator">' + titleAbbreviated + '</h5>')
             cardBody.append('<p>' + result.data.articles[i].source.name + '</p>')
             revealDiv = $('<div>')
             revealDiv.attr('class', 'card-reveal')
-            icon = $('<i>')
-            icon.attr('class' , 'material-icons right')
-            icon.text('close')
-            revealDiv.append(icon)
-            revealDiv.append('<h3>' + result.data.articles[i].title + '</h3>')
-            revealDiv.append('<p>' + result.data.articles[i].source.name + '</p>')
-            cardBody.append(revealDiv);
+            revealSpan = $('<span class="card-title">')
+            var closer = $('<i class="material-icons right"> X </i>')
+            revealSpan.append(closer)
+            revealSpan.append('<h4>' + result.data.articles[i].source.name + '</h4>' )
+            revealDiv.append(revealSpan);
+            revealDiv.append('<h5>' + result.data.articles[i].title + '</h5>')
 
-
-
-
-
-
-
+            var revealLinks = $('<div>')
+            revealLinks.attr('class' , 'card-action')
+            var revLink = $('<a>')
+            revLink.attr('href', result.data.articles[i].url)
+            revLink.attr('target', 'blank');
+            revLink.text('Check it out!')
+            revLink.appendTo(revealLinks)
+            revealLinks.appendTo(revealDiv)
+            
+            newCard.append(revealDiv);
             } else {
-            cardBody.append('<h5>' + result.data.articles[i].title + '</h5>')
-            console.log(result.data.articles[i].title.length)
-            cardBody.append('<p>' + result.data.articles[i].source.name + '</p>') 
+            cardBody.append('<h5>' + result.data.articles[i].title + '</h5>') 
             }
             cardBody.appendTo(newCard)
 
@@ -208,4 +231,7 @@ axios.get(searchURL).then(function (result) {
 
     })
     
+}
+$('#news-search').on('click', function() {
+    genNews();
 })
