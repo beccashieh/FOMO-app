@@ -12,20 +12,11 @@
 </head>
 
 <body>
+  
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">FOMO...no mo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-        ><i class="waves-effect waves-light btn-sm">menu</i></a
-      >
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="./news.html">News</a></li>
-        <li><a href="./music.html">Music</a></li>
-        <li><a href="./movies.html">Movies/TV</a></li>
-        <li><a href="./meme.html">Memes</a></li>
-      </ul>
-      <ul class="sidenav" id="mobile-demo">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="./news.html">News</a></li>
         <li><a href="./music.html">Music</a></li>
@@ -34,6 +25,7 @@
       </ul>
     </div>
   </nav>
+
   <!-- SIGN UP MODAL -->
   <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
@@ -52,14 +44,6 @@
         <div class="input-field">
           <input type="text" id="favorite-genre" required />
           <label for="favorite-genre">Favorite Movie Genre</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="music-artist" required />
-          <label for="music-artist">Your Favorite Music Artist</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="favorite-news-topic" required />
-          <label for="favorite-news-topic">Your Favorite News Topic</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Sign up</button>
       </form>
@@ -86,7 +70,8 @@
   </div>
 
   <!-- LOGOUT -->
-  <a class="waves-effect waves-light btn logged-in" id="logout">Logout</a>
+  <a class="waves-effect waves-light btn logged-in modal-trigger" id="logout">Logout</a>
+
 
 
   <div class='container' id='content'>
