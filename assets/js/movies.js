@@ -13,7 +13,6 @@ let endDateInput = '';
 let startDateDisplay = '';
 let endDateDisplay = '';
 let hasDateInput = false;
-let displayFavoriteMovies = false;
 let genreOptions = [{
         "id": 28,
         "name": "Action"
@@ -109,7 +108,6 @@ $(document).ready(function () {
 
 //listen for auth status changes
 auth.onAuthStateChanged(user => {
-    console.log(displayFavoriteMovies);
     // CHANGE IF THE USER IS LOGGED IN
     if (user) {
         // runs every time something changes in the database
@@ -117,7 +115,6 @@ auth.onAuthStateChanged(user => {
             $("#movie-row").empty();
             $("#tv-row").empty();
             $("#suggestTV-row").empty();
-            $("#favorite-movie-row").empty();
             hasDateInput = false;
             // signifies that the user is logged in
             userLoggedIn = true;
@@ -125,8 +122,6 @@ auth.onAuthStateChanged(user => {
             // capture genre and make it uppercase
             genre = doc.data().genre;
             genre = genre.charAt(0).toUpperCase() + genre.slice(1);
-            // capture favorite movie ids
-            favoriteMovieArr = doc.data().favoriteMovieID;
             // get the genre id
             generateGenreID();
             // create urls using the genre ids
@@ -144,7 +139,6 @@ auth.onAuthStateChanged(user => {
         $("#movie-row").empty();
         $("#tv-row").empty();
         $("#suggestTV-row").empty();
-        $("#favorite-movie-row").empty();
         hasDateInput = false;
 
         // empty genre
@@ -262,7 +256,6 @@ const generateCustomURLs = () => {
         tvQueryURL = "https://api.themoviedb.org/3/discover/tv?api_key=c472f72e061f4083caae81e6e937276a&sort_by=popularity.desc";
 
     }
-    console.log(movieQueryURL);
 }
 
 // get movies based on user preference, or generic url
