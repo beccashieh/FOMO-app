@@ -53,17 +53,20 @@ $(document).on("click", "#forever", function() {
       memeHolder.appendTo(newCard);
 
       //Renders the generator link for users to create their own meme using the popular meme image.
+      var cardContent = $("<div>");
+      cardContent.attr("class", "card-content");
+      cardContent.appendTo(newCard);
       var cardLinks = $("<div>");
-      cardLinks.attr("class", "card-links");
+      cardLinks.attr("class", "card-action");
       var generatorLink = $("<a>");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       console.log(memeArr[i].instanceUrl);
       generatorLink.text("Click here to make your own!");
-      generatorLink.appendTo(newCard);
+      generatorLink.appendTo(cardContent);
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s3");
+      cardColumn.attr("class", "col s12 m6 l3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -111,17 +114,20 @@ $(document).on("click", "#week", function() {
       memeHolder.appendTo(newCard);
 
       //Renders the generator link for users to create their own meme using the popular meme image.
+      var cardContent = $("<div>");
+      cardContent.attr("class", "card-content");
+      cardContent.appendTo(newCard);
       var cardLinks = $("<div>");
-      cardLinks.attr("class", "card-links");
+      cardLinks.attr("class", "card-action");
       var generatorLink = $("<a>");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       console.log(memeArr[i].instanceUrl);
       generatorLink.text("Click here to make your own!");
-      generatorLink.appendTo(newCard);
+      generatorLink.appendTo(cardContent);
 
       //Columns to control sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s3");
+      cardColumn.attr("class", "col s12 m6 l3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }
@@ -169,11 +175,14 @@ $(document).on("click", "#month", function() {
       memeHolder.appendTo(newCard);
 
       //Renders the generator link for users to create their own meme using the popular meme image.
+      var cardContent = $("<div>");
+      cardContent.attr("class", "card-content");
+      cardContent.appendTo(newCard);
       var generatorLink = $("<a>");
-      generatorLink.attr("class", "card-links");
+      generatorLink.attr("class", "card-action");
       generatorLink.attr("href", memeArr[i].instanceUrl);
       generatorLink.text("Click here to make your own!");
-      generatorLink.appendTo(newCard);
+      generatorLink.appendTo(cardContent);
       // var favButton = $("<btn>");
       // favButton.attr("class", "fav waves-effect waves-light btn");
       // favButton.appendTo(memeHolder);
@@ -181,7 +190,7 @@ $(document).on("click", "#month", function() {
 
       //Columns to control the sizing of the cards and add them to the results-content div.
       var cardColumn = $("<div>");
-      cardColumn.attr("class", "col s3");
+      cardColumn.attr("class", "col s12 m6 l3");
       newCard.appendTo(cardColumn);
       cardColumn.appendTo($("#results-content"));
     }

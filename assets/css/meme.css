@@ -18,8 +18,7 @@
   
   #forever,
   #week,
-  #month,
-  #favorites {
+  #month {
     font-size: 20px;
     text-shadow: 2px 2px #383737;
     border-radius: 10px;
@@ -38,7 +37,6 @@
     color: #383737;
     text-align: center;
     font-size: x-large;
-    padding: 20px;
     text-shadow: -1px 1px #8d8b8b;
   }
 
@@ -61,5 +59,35 @@
   .modal-trigger {
     margin-left: 18px;
   }
+
+
+@media only screen and (max-width: 768px){
+  h3 {
+    font-size: x-large;
+  }
+  .card-action {
+    font-size: large;
+    padding: 10px;
+  }
+  #forever,
+  #week,
+  #month {
+    font-size: large;
+  }
+
+@media only screen and (max-width: 414px){
+  h3 {
+    font-size: x-large;
+  }
+  .card-action {
+    font-size: large;
+    padding: 10px;
+  }
+  #forever,
+  #week,
+  #month {
+    font-size: small;
+  }
+}
 
   
