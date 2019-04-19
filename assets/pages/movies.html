@@ -2,21 +2,28 @@
 <html lang="en">
 
   <head>
-    <!--jQuery-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/reset.css" />
+    <!--Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/movies.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Ubuntu+Condensed" rel="stylesheet">
+    <!--Internal CSS-->
+    <link rel="stylesheet" href="../css/movies.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!--Axios-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Righteous|Ubuntu+Condensed" rel="stylesheet">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
 
 
 
@@ -24,75 +31,92 @@
   </head>
 
   <body>
+    <!-- NAVBAR -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">FOMO...no mo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+        class="waves-effect waves-light btn-sm">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="./news.html">News</a></li>
+      <li><a href="./music.html">Music</a></li>
+      <li><a href="./movies.html">Movies/TV</a></li>
+      <li><a href="./meme.html">Memes</a></li>
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="./news.html">News</a></li>
+      <li><a href="./music.html">Music</a></li>
+      <li><a href="./movies.html">Movies/TV</a></li>
+      <li><a href="./meme.html">Memes</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">FOMO...no mo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="./news.html">News</a></li>
-            <li><a href="./music.html">Music</a></li>
-            <li><a href="./movies.html">Movies/TV</a></li>
-            <li><a href="./meme.html">Memes</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- SIGN UP MODAL -->
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
-      <div id="modal-signup" class="modal">
-        <div class="modal-content">
-          <h4>Sign up</h4><br />
-          <form id="signup-form">
-            <div class="input-field">
-              <input type="email" id="signup-email" required />
-              <label for="signup-email">Email address</label>
-            </div>
-            <div class="input-field">
-              <input type="password" id="signup-password" required />
-              <label for="signup-password">Choose password</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="favorite-genre" required />
-              <label for="favorite-genre">Favorite Movie Genre</label>
-            </div>
-            <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-          </form>
-        </div>
+    <!-- SIGN UP MODAL -->
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
+    <div id="modal-signup" class="modal">
+      <div class="modal-content">
+        <h4>Sign up</h4><br />
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="favorite-genre" required />
+            <label for="favorite-genre">Favorite Movie Genre</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="music-artist" required />
+            <label for="music-artist">Your Favorite Music Artist</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="favorite-news-topic" required />
+            <label for="favorite-news-topic">Your Favorite News Topic</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+        </form>
       </div>
-      <!-- LOGIN MODAL -->
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
-      <div id="modal-login" class="modal">
-        <div class="modal-content">
-          <h4>Login</h4><br />
-          <form id="login-form">
-            <div class="input-field">
-              <input type="email" id="login-email" required />
-              <label for="login-email">Email address</label>
-            </div>
-            <div class="input-field">
-              <input type="password" id="login-password" required />
-              <label for="login-password">Your password</label>
-            </div>
-            <button class="btn yellow darken-2 z-depth-0">Login</button>
-          </form>
-        </div>
+    </div>
+    <!-- LOGIN MODAL -->
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
+    <div id="modal-login" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4><br />
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Login</button>
+        </form>
       </div>
+    </div>
 
-      <!-- LOGOUT -->
-      <a class="waves-effect waves-light btn logged-in" id="logout">Logout</a>
+    <!-- LOGOUT -->
+    <a class="waves-effect waves-light btn logged-in" id="logout">Logout</a>
 
 
-      
+    <!-- DATE FORM -->
     <div id="content-container">
       <div class="row center-align">
         <div class="row center-align">
           <div class="col-12 center-align" id="header-row">
             <h1>Top Movies and TV Shows</h1>
-            <h5 id="instructions" class="center-align">Please Select a movie release date range or click submit to see
-              which movies are trending now</h5>
+            <h5 id="instructions" class="center-align">Please Select a movie release date range to see which movies were
+              trending during that time</h5>
           </div>
         </div>
         <div class='row' id='start-date-div'>
@@ -101,40 +125,55 @@
             <label class='active date-lable' for='startDate'>Movie Release Start Date</label>
           </div>
         </div>
-        <div class='row' id= 'end-date-div'>
+        <div class='row' id='end-date-div'>
           <div class="input-field col s6">
             <input placeholder='End Date' type='date' id='endDate' class="validate" />
             <label class='active date-lable' for='endDate'>Movie Release End Date</label>
           </div>
         </div>
-        <button id='date-button' type="submit" class="btn btn-success">Submit</button>
+        <button id='date-button' type="submit" class="btn btn-success waves-effect waves-light btn-large red accent-2 hoverbale
+          change-page-content-btn">Submit</button>
       </div>
-      <!-- CUSTOMIZE MODAL -->
-      <!-- Modal Trigger -->
-      <div class = "center-align">
-            <a class="waves-effect waves-light btn modal-trigger logged-in" href="#modal-create">Change
-              Favorite
-              Genre</a>
-            <div id="modal-create" class="modal center-align">
-              <div class="modal-content">
-                <h4>Change Favorite Genre</h4><br />
-                <form id="create-form">
-                  <div class="input-field">
-                    <input type="text" id="genre" required>
-                    <label for="genre">Genre</label>
-                  </div>
-                  <button class="btn yellow darken-2 z-depth-0 ">Submit</button>
-                </form>
-              </div>
-            </div>
-            </div>
 
+      <!-- CHANGE GENRE MODAL -->
+      <!-- Modal Trigger -->
+      <div class="center-align" id="change-genre-btn">
+        <a class="waves-effect waves-light btn-large red accent-2 hoverbale btn modal-trigger logged-in change-page-content-btn"
+          href="#modal-create">Change
+          Favorite
+          Genre</a>
+        <div id="modal-create" class="modal center-align">
+          <div class="modal-content">
+            <h4>Change Favorite Genre</h4><br />
+            <form id="create-form">
+              <div class="input-field">
+                <input type="text" id="genre" required>
+                <label for="genre">Genre</label>
+              </div>
+              <button class="btn yellow darken-2 z-depth-0 ">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAVORITE MOVIE BUTTON 
+      <div class="center-align" id="see-favorite-movie-btn">
+        <button id='date-button' type="submit" class="btn change-page-content-btn btn-success waves-effect waves-light btn-large red accent-2 hoverbale
+          change-page-content-btn">Favorite Movies</button>
+      </div>-->
+
+      <!-- ROW FAVORITE OF MOVIES -->
+      <h3 id="favorite-movie-header" class="center-align"></h3>
+      <div class="row" id="favorite-movie-row"></div>
+
+      <!-- ROW OF MOVIES -->
       <h3 id="movie-header" class="center-align"></h3>
       <div class="row" id="movie-row"></div>
 
+      <!-- ROW OF TV -->
       <h3 id="tv-header" class="center-align"></h3>
       <div class="row" id="tv-row"></div>
-
+      <!-- ROW OF SUGGESTED TV -->
       <h3 id="suggestTV-header" class="center-align"></h3>
       <div class="row" id="suggestTV-row"></div>
 
