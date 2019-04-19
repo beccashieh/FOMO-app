@@ -15,7 +15,17 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">FOMO...no mo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+        ><i class="waves-effect waves-light btn-sm">menu</i></a
+      >
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="./news.html">News</a></li>
+        <li><a href="./music.html">Music</a></li>
+        <li><a href="./movies.html">Movies/TV</a></li>
+        <li><a href="./meme.html">Memes</a></li>
+      </ul>
+      <ul class="sidenav" id="mobile-demo">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="./news.html">News</a></li>
         <li><a href="./music.html">Music</a></li>
@@ -24,7 +34,6 @@
       </ul>
     </div>
   </nav>
-
   <!-- SIGN UP MODAL -->
   <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
@@ -92,9 +101,9 @@
         <br>
         <div id='search-bar'>
         <label for="news-query-input"></label>
-        <input type="search" class="form-control" id="news-query-input" placeholder="botany">
+        <input type="search" class="form-control" id="news-query-input" placeholder="javascript">
         <br>
-        <button class='btn btn-success' id='news-search'>Search!</button>
+        <button class='btn-large red accent-2' id='news-search'>Search!</button>
         </div>
       </div>
     </div>
