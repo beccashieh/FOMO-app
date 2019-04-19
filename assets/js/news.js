@@ -164,7 +164,7 @@ axios.get(searchURL).then(function (result) {
             revLink.text('Check it out!')
             revLink.appendTo(revealLinks)
             revealLinks.appendTo(revealDiv)
-            
+
             newCard.append(revealDiv);
             } else {
             cardBody.append('<h5>' + result.data.articles[i].title + '</h5>') 
@@ -181,17 +181,19 @@ axios.get(searchURL).then(function (result) {
             cardLinks.appendTo(newCard)
 
             var cardColumn = $('<div>')
-            cardColumn.attr('class' , 'col s3')
+                    if (($(window).width() <= 600)) {
+                        cardColumn.attr('class' , 'col s12') } 
+                    else if ($(window).width() <= 768) {
+                        cardColumn.attr('class' , 'col s6')
+                    } else if ($(window).width() <= 1200) {
+                        cardColumn.attr('class' , 'col s4')
+                    } else {cardColumn.attr('class' , 'col s3')}
+                
+            
             newCard.appendTo(cardColumn);
             cardColumn.appendTo($('#news-item-box'));
             
-            if ((i % 4 === 0) && (i !== 0)) {
-                $('#news-item-box').removeAttr('id')
-                var newRow = $('<div>')
-                newRow.attr('class', 'row news-item')
-                newRow.attr('id', 'news-item-box')
-                newRow.appendTo($('#results'))
-            }
+
         }
             var newCard = $('<div>')
             newCard.attr('class', 'card news-item')
