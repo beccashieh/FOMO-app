@@ -145,20 +145,29 @@ axios.get(searchURL).then(function (result) {
             }
             titleAbbreviated = titleConcat + '...'
 
-            cardBody.append('<h5>' + titleAbbreviated + '</h5>')
+            cardBody.append('<h5 class= "activator">' + titleAbbreviated + '</h5>')
             cardBody.append('<p>' + result.data.articles[i].source.name + '</p>')
             revealDiv = $('<div>')
             revealDiv.attr('class', 'card-reveal')
-            icon = $('<i>')
-            icon.attr('class' , 'material-icons right')
-            icon.text('close')
-            revealDiv.append(icon)
-            revealDiv.append('<h3>' + result.data.articles[i].title + '</h3>')
-            revealDiv.append('<p>' + result.data.articles[i].source.name + '</p>')
+            revealSpan = $('<span class="card-title">')
+            var closer = $('<i class="material-icons right"> X </i>')
+            revealSpan.append(closer)
+            revealSpan.append('<h4>' + result.data.articles[i].source.name + '</h4>' )
+            revealDiv.append(revealSpan);
+            revealDiv.append('<h5>' + result.data.articles[i].title + '</h5>')
+
+            var revealLinks = $('<div>')
+            revealLinks.attr('class' , 'card-action')
+            var revLink = $('<a>')
+            revLink.attr('href', result.data.articles[i].url)
+            revLink.attr('target', 'blank');
+            revLink.text('Check it out!')
+            revLink.appendTo(revealLinks)
+            revealLinks.appendTo(revealDiv)
+            
             newCard.append(revealDiv);
             } else {
-            cardBody.append('<h5>' + result.data.articles[i].title + '</h5>')
-            cardBody.append('<p>' + result.data.articles[i].source.name + '</p>') 
+            cardBody.append('<h5>' + result.data.articles[i].title + '</h5>') 
             }
             cardBody.appendTo(newCard)
 

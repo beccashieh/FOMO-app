@@ -37,7 +37,8 @@ margin-right: 0;
 }
 #news-query-input {
     border-radius: 10px;
-    width: 50%
+    width: 50%;
+    border-bottom: 1px solid rgba(255, 82, 82, 0.4);
 }
 #news-query-input:hover { 
     
