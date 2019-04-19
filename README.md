@@ -17,26 +17,27 @@
 ### Technologies Used:
 
     * Axios (new technology)
-    * Foundation/Materialize - CSS Framework
+    * Materialize - CSS Framework
+    * Firebase/Firestore
     * HTML
     * JavaScript
 
 ### APIs to be Used
 
     * News - Currents API
-    * Shopping/Products - Walmart - Trending API
+    * Memes - Meme Generator -- Popular API
     * Movies/TV - TMDb
     * Music - last.fm
 
 ### Rough Breakdown of Tasks
 
     * Create Framework/Design - Becca
-    * Create User validation/authentication - Firebase -TBD
+    * Create User validation/authentication - Firebase -Kevin
         ** Login modal
     * Build home page form - Becca
     * TV Movie - Kevin
     * Shopping/Products - Becca
-    * News API - Emmerson
+    * News API - Emerson
     * Music - Steve
 
 ### Sketch of Final Product

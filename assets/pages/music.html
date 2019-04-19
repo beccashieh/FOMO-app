@@ -25,7 +25,17 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="waves-effect waves-light btn-sm">menu</i></a
+        >
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="./music.html">Music</a></li>
+          <li><a href="./movies.html">Movies/TV</a></li>
+          <li><a href="./meme.html">Memes</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
           <li><a href="../../index.html">Home</a></li>
           <li><a href="./news.html">News</a></li>
           <li><a href="./music.html">Music</a></li>
@@ -35,6 +45,59 @@
       </div>
     </nav>
 
+        <!-- SIGN UP MODAL -->
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
+        <div id="modal-signup" class="modal">
+          <div class="modal-content">
+            <h4>Sign up</h4><br />
+            <form id="signup-form">
+              <div class="input-field">
+                <input type="email" id="signup-email" required />
+                <label for="signup-email">Email address</label>
+              </div>
+              <div class="input-field">
+                <input type="password" id="signup-password" required />
+                <label for="signup-password">Choose password</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="favorite-genre" required />
+                <label for="favorite-genre">Favorite Movie Genre</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="music-artist" required />
+                <label for="music-artist">Your Favorite Music Artist</label>
+              </div>
+              <div class="input-field">
+                <input type="text" id="favorite-news-topic" required />
+                <label for="favorite-news-topic">Your Favorite News Topic</label>
+              </div>
+              <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+            </form>
+          </div>
+        </div>
+        <!-- LOGIN MODAL -->
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
+        <div id="modal-login" class="modal">
+          <div class="modal-content">
+            <h4>Login</h4><br />
+            <form id="login-form">
+              <div class="input-field">
+                <input type="email" id="login-email" required />
+                <label for="login-email">Email address</label>
+              </div>
+              <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Your password</label>
+              </div>
+              <button class="btn yellow darken-2 z-depth-0">Login</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- LOGOUT -->
+        <a class="waves-effect waves-light btn logged-in" id="logout">Logout</a>
 
     <!-- Buttons go here -->
     <div class="row grey" id="button-row">
@@ -42,7 +105,7 @@
     
       <!-- Top 10 Artist button -->
             <p class="center-align">
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale left" id="top-artists-button"><i class="material-icons right">music_note</i>
+        <a class="waves-effect waves-light btn-large red accent-2 hoverable left" id="top-artists-button"><i class="material-icons right">music_note</i>
           Top 10 Artist
         </a>
         <!-- Top 10 Songs button -->
@@ -54,11 +117,7 @@
           <!-- Country artist autocomplete field -->
           <p class="center-align">
           <div class="input-field col s6">
-                <!-- <i class="material-icons prefix">map</i>
-                <input type="text" class="autocomplete" id="artist-country-input">
-                <label class="text" id="autocomplete-artist-input" for="autocomplete-input">Country Name</label> -->
-                
-                <!-- Submit buttons -->
+               <!-- Buttons -->
                 <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-country-button"><i class="material-icons right">send</i>
                     Top Artists By Country
                   </a>
@@ -70,28 +129,49 @@
                     Top Songs By Country
                   </a>
                 </p>
-              </div>
-                  
-          
-                <!-- Country song autocomplete field -->
+              </div>           
+                <!-- Country autocomplete field -->
                 <div class="col s2"></div>
                 <p class="center-align">
                  <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
                 <input type="text" class="autocomplete" id="country-input">
-                <label class="text" id="autocomplete-song-input" for="autocomplete-input">Country Name</label>
+                <label class="text black-text" id="autocomplete-input" for="autocomplete-input">Country Name</label>
                  </p>
+                </div>
             </div>
           </p>
   
     
     </div>
-    <div class="row">
+    <div class="results row">
       <!-- Output goes here -->
       <div>
-        <div id="output"></div>
+        <div class="col s12" id="output"></div>
       </div>
     </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+        authDomain: "fomo-nomo-2442f.firebaseapp.com",
+        databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+        projectId: "fomo-nomo-2442f",
+        storageBucket: "fomo-nomo-2442f.appspot.com",
+        messagingSenderId: "1064584092617"
+      };
+      firebase.initializeApp(config);
+
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.4.0.min.js"
@@ -101,6 +181,7 @@
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
-    <script src="/assets/js/music.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/music.js"></script>
   </body>
 </html>

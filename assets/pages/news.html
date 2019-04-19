@@ -5,13 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel='stylesheet' href="../css/style.css">
   <link rel="stylesheet" href='../css/news.css'>
   <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet">
 </head>
 
 <body>
+  
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">FOMO...no mo</a>
@@ -24,6 +25,55 @@
       </ul>
     </div>
   </nav>
+
+  <!-- SIGN UP MODAL -->
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="favorite-genre" required />
+          <label for="favorite-genre">Favorite Movie Genre</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+  <!-- LOGIN MODAL -->
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGOUT -->
+  <a class="waves-effect waves-light btn logged-in modal-trigger" id="logout">Logout</a>
+
+
+
   <div class='container' id='content'>
     <br>
     <div class='row'>
@@ -36,9 +86,9 @@
         <br>
         <div id='search-bar'>
         <label for="news-query-input"></label>
-        <input type="search" class="form-control" id="news-query-input" placeholder="botany">
+        <input type="search" class="form-control" id="news-query-input" placeholder="javascript">
         <br>
-        <button class='btn btn-success' id='news-search'>Search!</button>
+        <button class='btn-large red accent-2' id='news-search'>Search!</button>
         </div>
       </div>
     </div>
@@ -49,10 +99,32 @@
     </div>
     </div>
   </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCh071lx7bhqjjnj28RYQNvOpOMTCcqWUo",
+      authDomain: "fomo-nomo-2442f.firebaseapp.com",
+      databaseURL: "https://fomo-nomo-2442f.firebaseio.com",
+      projectId: "fomo-nomo-2442f",
+      storageBucket: "fomo-nomo-2442f.appspot.com",
+      messagingSenderId: "1064584092617"
+    };
+    firebase.initializeApp(config);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.4.0.min.js"
     integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src='../js/news.js'></script>
 </body>
 
