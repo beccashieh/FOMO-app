@@ -101,6 +101,10 @@ $(document).ready(function () {
     $('.card').modal();
 });
 
+$(document).ready(function () {
+    $(".sidenav").sidenav();
+});
+
 
 
 //listen for auth status changes
