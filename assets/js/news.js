@@ -1,5 +1,6 @@
 var newsInput = '';
 var userLoggedIn = false;
+var searchNum = 0;
 $(document).ready(function() {
     $(".sidenav").sidenav();
   });
@@ -25,6 +26,7 @@ auth.onAuthStateChanged(user => {
             $('#news-query-input').text(newsTopic)
             newsInput = newsTopic;
             genNews();
+            searchNum ++;
         });
     } else {
 
@@ -60,7 +62,7 @@ const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut();
-    console.log("Logged Out")
+    console.log("Logged Out");
 });
 
 // login
@@ -88,9 +90,15 @@ $('#news-query-input').click(function () {
     })
 })
 function genNews() {
+console.log('working')
 $(".news-item").remove()
 if (userLoggedIn === false) {
 newsInput = $('#news-query-input').val();
+if (newsInput === '') {
+    newsInput = 'javascript'
+}
+} else if (searchNum >= 1) {
+    newsInput = $('#news-query-input').val();
 if (newsInput === '') {
     newsInput = 'javascript'
 }
@@ -127,9 +135,9 @@ axios.get(searchURL).then(function (result) {
             var cardBody = $('<div>')
             cardBody.attr('class', 'card-content')
             if (result.data.articles[i].urlToImage === null) {
-                console.log('working')
-                cardBody.append('<h3>' + result.data.articles[i].title + '</h3>')
-                cardBody.append('<h5>' + result.data.articles[i].source.name + '</h5>')
+                cardPicHolder.remove();
+                cardBody.append('<h4>' + result.data.articles[i].title + '</h4>')
+                cardBody.append('<h6>' + result.data.articles[i].source.name + '</h6>')
             } else if (result.data.articles[i].title.length > 55) {
             titleConcat = ''
             for (var j = 0; j < 52; j++) {
@@ -150,7 +158,6 @@ axios.get(searchURL).then(function (result) {
             newCard.append(revealDiv);
             } else {
             cardBody.append('<h5>' + result.data.articles[i].title + '</h5>')
-            console.log(result.data.articles[i].title.length)
             cardBody.append('<p>' + result.data.articles[i].source.name + '</p>') 
             }
             cardBody.appendTo(newCard)
@@ -216,4 +223,6 @@ axios.get(searchURL).then(function (result) {
     })
     
 }
-$('#news-search').on('click', genNews())
+$('#news-search').on('click', function() {
+    genNews();
+})
