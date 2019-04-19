@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow|Comfortaa"
+      rel="stylesheet"
+    />
 
     <title>FOMO NOMO</title>
   </head>
@@ -18,21 +26,18 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
-        <!-- Dropdown Trigger -->
-        <!--<ul id="dropdown" class="dropdown-content">
-          <li>
-            <a href="#">Sign Up<span class="badge">Sign Up</span></a>
-          </li>
-          <li>
-            <a href="#!">Login<span class="new badge">Login</span></a>
-          </li>
-          <li class="divider"></li>
-        </ul> -->
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="waves-effect waves-light btn-sm">menu</i></a
+        >
 
-        <a class="btn dropdown-button" href="#" data-activates="dropdown"
-          >Click Me! <i class="mdi-navigation-arrow-drop-down right"></i
-        ></a>-->
         <ul id="nav-mobile" class="right hide-on-med-and-down nav-items">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="./assets/pages/news.html">News</a></li>
+          <li><a href="./assets/pages/music.html">Music</a></li>
+          <li><a href="./assets/pages/movies.html">Movies/TV</a></li>
+          <li><a href="./assets/pages/meme.html">Memes</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
           <li><a href="/index.html">Home</a></li>
           <li><a href="./assets/pages/news.html">News</a></li>
           <li><a href="./assets/pages/music.html">Music</a></li>
@@ -44,10 +49,15 @@
 
     <!-- SIGN UP MODAL -->
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-signup">Sign Up</a>
+    <a
+      class="waves-effect waves-light btn modal-trigger logged-out"
+      href="#modal-signup"
+      >Sign Up</a
+    >
     <div id="modal-signup" class="modal">
       <div class="modal-content">
-        <h4>Sign up</h4><br />
+        <h4>Sign up</h4>
+        <br />
         <form id="signup-form">
           <div class="input-field">
             <input type="email" id="signup-email" required />
@@ -75,10 +85,15 @@
     </div>
     <!-- LOGIN MODAL -->
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger logged-out" href="#modal-login">Login</a>
+    <a
+      class="waves-effect waves-light btn modal-trigger logged-out"
+      href="#modal-login"
+      >Login</a
+    >
     <div id="modal-login" class="modal">
       <div class="modal-content">
-        <h4>Login</h4><br />
+        <h4>Login</h4>
+        <br />
         <form id="login-form">
           <div class="input-field">
             <input type="email" id="login-email" required />
@@ -103,7 +118,11 @@
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row valign-wrapper">
               <div class="col s4">
-                <img src="./assets/images/fomo-dog.jpg" alt="" class="circle responsive-img" />
+                <img
+                  src="./assets/images/fomo-dog.jpg"
+                  alt=""
+                  class="circle responsive-img"
+                />
                 <!-- notice the "circle" class -->
               </div>
               <div class="col s10">
@@ -122,10 +141,11 @@
     </div>
 
     <!--Javascript links-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
@@ -149,8 +169,13 @@
     </script>
 
     <!-- Compiled and minified JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="./assets/js/app.js"></script>
   </body>
-
 </html>

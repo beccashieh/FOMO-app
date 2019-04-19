@@ -1,4 +1,13 @@
-/* Change cursor to pointer */
+.sidenav {
+  background-color: rgb(196, 190, 190, 0.8);
+  border: 2px solid white;
+}
+
+.sidenav-trigger {
+  background-color: rgb(196, 190, 190, 1);
+  padding: 10px;
+}
+
 .artist-item {
   cursor: pointer;
 }
@@ -7,39 +16,31 @@
   cursor: pointer;
 }
 
-.results {
-  /* border: 1px solid lightgray; */
-  border-radius: 10px;
-  /* flex-wrap: wrap; */
-  align-content: space-around;
-  background-color: rgb(196, 190, 190, 0.8);
-  margin: auto 10%;
-  /* padding: 20px; */
+.autocomplete-content {
+  position: relative;
 }
 
 .card {
-  border: 1px solid #383737;
+  position: relative;
+}
+
+.results {
+  border-radius: 10px;
+  align-content: space-around;
+  background-color: rgb(196, 190, 190, 0.8);
+  margin: auto 10%;
 }
 
 #button-row {
   margin: auto;
-  width: 50%;
-}
-
-#button-row {
+  margin-bottom: 10px;
+  width: 50%!important;
   opacity: 0.9;
+  border-radius: 10px;
 }
 
 #top-artists-button {
   margin-left: 15px;
-}
-
-#autocomplete-artist-input {
-  opacity: 0.4;
-}
-
-#autocomplete-song-input {
-  opacity: 0.4;
 }
 
 .material-icons {
@@ -71,3 +72,26 @@
   border-bottom: 1px solid #b71c1c !important;
   box-shadow: 0 1px 0 0 #b71c1c !important;
 }
+
+/*
+    These rules take effect when the browser's width
+    is either 910px or less.
+  */
+@media screen and (max-width: 812px) {
+  #button-row {
+      width: 100%!important;  
+      height: auto;
+  }
+
+  @media screen and (max-width: 567px) {
+    #button-row {
+        width: 100%!important;  
+        height: auto;
+}
+
+a{
+  font-size: .60em!important;
+}
+  /* #top-artists-button {
+    margin-left: 0;
+  } */

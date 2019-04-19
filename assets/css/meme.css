@@ -35,6 +35,59 @@
   
   a {
     color: #383737;
-    padding: 20px;
+    text-align: center;
+    font-size: x-large;
     text-shadow: -1px 1px #8d8b8b;
   }
+
+  .nav-wrapper {
+    background-color: rgb(19, 7, 179);
+    font-family: 'Comfortaa', cursive;
+    text-shadow: -1px 1px #383737;
+  }
+
+  .sidenav {
+    background-color: rgb(196, 190, 190, .8);
+    border: 2px solid white;
+  }
+
+  .sidenav-trigger { 
+    background-color: rgb(196, 190, 190, 1);
+    padding: 10px;
+  }
+
+  .modal-trigger {
+    margin-left: 18px;
+  }
+
+
+@media only screen and (max-width: 768px){
+  h3 {
+    font-size: x-large;
+  }
+  .card-action {
+    font-size: large;
+    padding: 10px;
+  }
+  #forever,
+  #week,
+  #month {
+    font-size: large;
+  }
+
+@media only screen and (max-width: 414px){
+  h3 {
+    font-size: x-large;
+  }
+  .card-action {
+    font-size: large;
+    padding: 10px;
+  }
+  #forever,
+  #week,
+  #month {
+    font-size: small;
+  }
+}
+
+  

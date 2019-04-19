@@ -9,6 +9,10 @@ $(document).ready(function () {
     $('.card').modal();
 });
 
+$(document).ready(function() {
+    $(".sidenav").sidenav();
+  });
+
 // signup
 const signupForm = document.querySelector('#signup-form')
 signupForm.addEventListener('submit', (e) => {

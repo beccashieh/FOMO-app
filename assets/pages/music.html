@@ -25,7 +25,17 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">FOMO...no mo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="waves-effect waves-light btn-sm">menu</i></a
+        >
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./news.html">News</a></li>
+          <li><a href="./music.html">Music</a></li>
+          <li><a href="./movies.html">Movies/TV</a></li>
+          <li><a href="./meme.html">Memes</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
           <li><a href="../../index.html">Home</a></li>
           <li><a href="./news.html">News</a></li>
           <li><a href="./music.html">Music</a></li>
@@ -95,7 +105,7 @@
     
       <!-- Top 10 Artist button -->
             <p class="center-align">
-        <a class="waves-effect waves-light btn-large red accent-2 hoverbale left" id="top-artists-button"><i class="material-icons right">music_note</i>
+        <a class="waves-effect waves-light btn-large red accent-2 hoverable left" id="top-artists-button"><i class="material-icons right">music_note</i>
           Top 10 Artist
         </a>
         <!-- Top 10 Songs button -->
@@ -107,11 +117,7 @@
           <!-- Country artist autocomplete field -->
           <p class="center-align">
           <div class="input-field col s6">
-                <!-- <i class="material-icons prefix">map</i>
-                <input type="text" class="autocomplete" id="artist-country-input">
-                <label class="text" id="autocomplete-artist-input" for="autocomplete-input">Country Name</label> -->
-                
-                <!-- Submit buttons -->
+               <!-- Buttons -->
                 <a class="waves-effect waves-light btn-large red accent-2 hoverable" id="top-artist-country-button"><i class="material-icons right">send</i>
                     Top Artists By Country
                   </a>
@@ -123,17 +129,16 @@
                     Top Songs By Country
                   </a>
                 </p>
-              </div>
-                  
-          
-                <!-- Country song autocomplete field -->
+              </div>           
+                <!-- Country autocomplete field -->
                 <div class="col s2"></div>
                 <p class="center-align">
                  <div class="input-field col s6">
                 <i class="material-icons prefix">map</i>
                 <input type="text" class="autocomplete" id="country-input">
-                <label class="text" id="autocomplete-song-input" for="autocomplete-input">Country Name</label>
+                <label class="text black-text" id="autocomplete-input" for="autocomplete-input">Country Name</label>
                  </p>
+                </div>
             </div>
           </p>
   
@@ -142,7 +147,7 @@
     <div class="results row">
       <!-- Output goes here -->
       <div>
-        <div id="output"></div>
+        <div class="col s12" id="output"></div>
       </div>
     </div>
     
