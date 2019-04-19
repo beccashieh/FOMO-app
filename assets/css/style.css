@@ -1,7 +1,7 @@
 .brand-logo {
   padding: 20px;
   text-shadow: 2px 2px #383737;
-  font-size: xx-large;
+  font-size: xmedium;
 }
 
 body {
@@ -41,6 +41,13 @@ body {
 .sidenav-trigger { 
   background-color: rgb(196, 190, 190, 1);
   padding: 10px;
+}
+
+
+@media only screen and (max-width: 414px){
+  .brand-logo {
+    font-size: medium!important;
+  }  
 }
 
 
