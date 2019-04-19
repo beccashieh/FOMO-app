@@ -1,12 +1,12 @@
 .card {
-    height: 500px;
+    height: 550px;
+    border: 2px solid #383737;
 }
-
 
 h1,
 h3,
 h5{
-    text-shadow: 2px 2px rgb(19, 7, 179);
+    text-shadow: 2px 2px #383737;
     color: white;
 }
 
@@ -23,7 +23,9 @@ h5{
 
 #movie-header,
 #tv-header,
-#suggestTV-header{
+#suggestTV-header,
+#favorite-movie-header,
+#favorite-movie-btn{
     display: none;
 }
 
@@ -33,10 +35,29 @@ h5{
     width: 50%;
     padding: 10px;
 }
+.card .card-title {
+    color: #383737;
+    text-shadow: -1px 1px #8d8b8b;
+}
+#see-favorite-movie-btn{
+    padding-top: 20px;
+}
+
+.change-page-content-btn{
+        font-size: 20px;
+        text-shadow: 2px 2px #383737;
+        border-radius: 10px;
+}
 
 @media (max-width: 768px) {
     .card .card-title {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 414px) {
+    .card .card-title {
+        font-size: 15px;
     }
 }
 
