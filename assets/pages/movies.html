@@ -32,18 +32,27 @@
 
   <body>
     <!-- NAVBAR -->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">FOMO...no mo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="./news.html">News</a></li>
-          <li><a href="./music.html">Music</a></li>
-          <li><a href="./movies.html">Movies/TV</a></li>
-          <li><a href="./meme.html">Memes</a></li>
-        </ul>
-      </div>
-    </nav>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">FOMO...no mo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+        class="waves-effect waves-light btn-sm">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="./news.html">News</a></li>
+      <li><a href="./music.html">Music</a></li>
+      <li><a href="./movies.html">Movies/TV</a></li>
+      <li><a href="./meme.html">Memes</a></li>
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="./news.html">News</a></li>
+      <li><a href="./music.html">Music</a></li>
+      <li><a href="./movies.html">Movies/TV</a></li>
+      <li><a href="./meme.html">Memes</a></li>
+    </ul>
+  </div>
+</nav>
 
     <!-- SIGN UP MODAL -->
     <!-- Modal Trigger -->
@@ -128,7 +137,7 @@
 
       <!-- CHANGE GENRE MODAL -->
       <!-- Modal Trigger -->
-      <div class="center-align">
+      <div class="center-align" id="change-genre-btn">
         <a class="waves-effect waves-light btn-large red accent-2 hoverbale btn modal-trigger logged-in change-page-content-btn"
           href="#modal-create">Change
           Favorite
