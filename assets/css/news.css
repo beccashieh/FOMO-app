@@ -1,73 +1,83 @@
-
 /*-- news stylings --*/
 .sidenav {
-    background-color: rgb(196, 190, 190, .8);
-    border: 2px solid white;
-  }
-  
-  .sidenav-trigger { 
-    background-color: rgb(196, 190, 190, 1);
-    padding: 10px;
-  }
+  background-color: rgb(196, 190, 190, 0.8);
+  border: 2px solid white;
+}
+
+.sidenav-trigger {
+  background-color: rgb(196, 190, 190, 1);
+  padding: 10px;
+}
+
 body {
-    text-align: center;
-    
+  text-align: center;
 }
+
 .modal-trigger {
-    float: left;
-    margin-right: 4px;
+  float: left;
+  margin-right: 4px;
 }
+
 .news-item {
-    text-align: center;
-    height: 400px;
+  text-align: center;
+  height: 400px;
 }
 
 #intro-text {
-color: white;
-text-shadow: 2px 2px rgb(19, 7, 179);
-border-radius: 10px;
-border: 1px solid lightgray;
-flex-wrap: wrap;
-align-content: space-around;
-background-color: rgb(196, 190, 190, .8);
-margin-left: 0;
-margin-right: 0;
+  text-shadow: 2px 2px #383737;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: rgb(196, 190, 190, 0.8);
+  margin-left: 0;
+  margin-right: 0;
 }
-#search-bar {
-    padding: 2%;
-    margin-left: 20%;
-    text-align: center;
-    border-radius: 10px;
-    background-color: rgba(226, 226, 226, 0.8);
-    width: 60%;
-}
-#news-query-input {
-    border-radius: 10px;
-    width: 50%;
-    border-bottom: 1px solid rgba(255, 82, 82, 0.4);
-}
-#news-query-input:hover { 
-    
-    background-color: rgba(255, 82, 82, 0.5);
-}
-#news-query-input:focus { 
-    border-bottom: 1px solid rgba(255, 82, 82, 1);
-    background-color: rgba(255, 82, 82, 0.4);
-}
-.card-image {
-    border-radius: 10px;
-    width: auto;
-    height: 150px;
 
+#search-bar {
+  padding: 2%;
+  margin-left: 20%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(226, 226, 226, 0.8);
+  width: 60%;
 }
+
+#news-query-input {
+  border-radius: 10px;
+  width: 50%;
+  border-bottom: 1px solid rgba(255, 82, 82, 0.4);
+}
+
+#news-query-input:hover {
+  background-color: rgba(255, 82, 82, 0.5);
+}
+
+#news-query-input:focus {
+  border-bottom: 1px solid rgba(255, 82, 82, 1);
+  background-color: rgba(255, 82, 82, 0.4);
+}
+
+.card-image {
+  border-radius: 10px;
+  width: auto;
+  height: 150px;
+}
+
 #results {
-display: none;
-border-radius: 10px;
-border: 1px solid lightgray;
-flex-wrap: wrap;
-align-content: space-around;
-background-color: rgb(196, 190, 190, .8);
+  display: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  flex-wrap: wrap;
+  align-content: space-around;
+  background-color: rgb(196, 190, 190, 0.8);
 }
+
 button {
-    text-shadow: 2px 2px #383737;
+  text-shadow: 2px 2px #383737;
 }
+
+.card {
+    border: 2px solid #383737;
+  }
