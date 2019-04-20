@@ -11,7 +11,11 @@
   }
 body {
     text-align: center;
-    align-content: center;
+    
+}
+.modal-trigger {
+    float: left;
+    margin-right: 4px;
 }
 .news-item {
     text-align: center;
@@ -19,6 +23,8 @@ body {
 }
 
 #intro-text {
+color: white;
+text-shadow: 2px 2px rgb(19, 7, 179);
 border-radius: 10px;
 border: 1px solid lightgray;
 flex-wrap: wrap;
@@ -42,11 +48,11 @@ margin-right: 0;
 }
 #news-query-input:hover { 
     
-    background-color: rgba(255, 82, 82, 0.4);
+    background-color: rgba(255, 82, 82, 0.5);
 }
 #news-query-input:focus { 
-    border-bottom: 1px solid rgba(255, 82, 82);
-    background-color: rgba(255, 82, 82, 0.2);
+    border-bottom: 1px solid rgba(255, 82, 82, 1);
+    background-color: rgba(255, 82, 82, 0.4);
 }
 .card-image {
     border-radius: 10px;
@@ -61,4 +67,7 @@ border: 1px solid lightgray;
 flex-wrap: wrap;
 align-content: space-around;
 background-color: rgb(196, 190, 190, .8);
+}
+button {
+    text-shadow: 2px 2px #383737;
 }
