@@ -11,10 +11,13 @@
 - Emerson Harmon
 - Steve Travis
 
+![home-page](https://user-images.githubusercontent.com/47259793/56828909-5bd64a00-6830-11e9-92e3-16ad93126620.PNG)
+
 ### Project Description
 
     Fear of Missing Out No More
     FOMO NOMO is a web app you use to quickly find out trending news topics, memes, popular movies/TV shows, and music.
+    
 
 ### Technologies Used:
 
