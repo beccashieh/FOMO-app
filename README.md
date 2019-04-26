@@ -6,10 +6,10 @@
 
 ### Team Members
 
-- Becca
-- Kevin
-- Emerson
-- Steve
+- Becca Shieh
+- Kevin Schroeder
+- Emerson Harmon
+- Steve Travis
 
 ### Project Description
 
@@ -38,7 +38,7 @@
   -Login modal
 - Build home page form - Becca
 - TV Movie - Kevin
-- Shopping/Products - Becca
+- Memes - Becca
 - News API - Emerson
 - Music - Steve
 
